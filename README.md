@@ -30,9 +30,9 @@ While editing the skills themselves, skip the install step entirely:
 claude --plugin-dir .
 ```
 
-## Run `/mattpocock-skills:setup-matt-pocock-skills` once per repo
+## Run `/mattpocock-skills:mattpocock-skills-setup` once per repo
 
-In your Claude Code session, run [setup-matt-pocock-skills](./skills/engineering/setup-matt-pocock-skills/SKILL.md) as `/mattpocock-skills:setup-matt-pocock-skills`, once in every repo where you want the engineering flows. Plugin skills are always namespaced, so every command in this README is `/mattpocock-skills:<skill>`. It asks you:
+In your Claude Code session, run [mattpocock-skills-setup](./skills/engineering/mattpocock-skills-setup/SKILL.md) as `/mattpocock-skills:mattpocock-skills-setup`, once in every repo where you want the engineering flows. Plugin skills are always namespaced, so every command in this README is `/mattpocock-skills:<skill>`. It asks you:
 
 - which issue tracker you want (`to-spec` and `to-tickets` read it back)
 - which label vocabulary `to-tickets` applies to issues
