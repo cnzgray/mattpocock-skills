@@ -79,8 +79,13 @@ The rest, standalone:
 .claude-plugin/plugin.json       # plugin manifest; the skills array lists all 25 shipped skills
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace
 skills/engineering/              # 18 skills
+agents/researcher.md             # read-only investigator: research, grilling fact-finding, wayfinder research tickets, codebase walkthroughs, design-it-twice
+agents/standards-reviewer.md     # code-review's Standards axis
+agents/spec-reviewer.md          # code-review's Spec axis
 skills/productivity/             # 7 skills
 ```
+
+Sub-agents ship under the same namespace as the skills: `mattpocock-skills:researcher`, `mattpocock-skills:standards-reviewer`, `mattpocock-skills:spec-reviewer`. Renaming the plugin renames both.
 
 ## Credit & license
 
