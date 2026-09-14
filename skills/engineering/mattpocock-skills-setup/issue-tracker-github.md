@@ -14,11 +14,11 @@ Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all o
 Infer the repo from `git remote -v`; `gh` does this automatically when run inside a clone.
 
 
-## When a skill says "publish to the issue tracker"
+## Publishing to the issue tracker
 
 Create a GitHub issue.
 
-## When a skill says "fetch the relevant ticket"
+## Fetching the relevant ticket
 
 Run `gh issue view <number> --comments`.
 

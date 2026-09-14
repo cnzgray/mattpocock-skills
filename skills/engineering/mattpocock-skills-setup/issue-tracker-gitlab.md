@@ -15,11 +15,11 @@ Issues and specs for this repo live as GitLab issues. Use the [`glab`](https://g
 Infer the repo from `git remote -v`; `glab` does this automatically when run inside a clone.
 
 
-## When a skill says "publish to the issue tracker"
+## Publishing to the issue tracker
 
 Create a GitLab issue.
 
-## When a skill says "fetch the relevant ticket"
+## Fetching the relevant ticket
 
 Run `glab issue view <number> --comments`.
 

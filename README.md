@@ -2,7 +2,7 @@
 
 [Matt Pocock's agent skills](https://github.com/mattpocock/skills), the "Skills for Real Engineers" set, packaged as a **native Claude Code plugin**.
 
-This repo is an unofficial personal fork of that project, narrowed to the small set of skills I actually use: exactly 8 skills are enabled, whitelisted in `.claude-plugin/plugin.json`. The other 14 upstream skills are not deleted; they are parked out of the manifest under `skills/_shelved/` (see [Shelved](#shelved)). Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
+This repo is an unofficial personal fork of that project, narrowed to the small set of skills I actually use: exactly 9 skills are enabled, whitelisted in `.claude-plugin/plugin.json`. The other 14 upstream skills are not deleted; they are parked out of the manifest under `skills/_shelved/` (see [Shelved](#shelved)). Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
 
 What is not here: the Codex agent metadata, the docs site, the repo authoring notes, the scripts, and the release tooling that only ever mattered inside the upstream repo. If you want those, go upstream.
 
@@ -43,17 +43,18 @@ In your Claude Code session, run [mattpocock-skills-setup](./skills/engineering/
 The main flow is **idea to ship**:
 
 ```
-grilling → to-spec → to-tickets → implement (tdd + code-review) → commit
+grill-with-docs → to-spec → to-tickets → implement (tdd + code-review) → commit
 ```
 
-- **[grilling](./skills/productivity/grilling/SKILL.md)**: a relentless interview that sharpens the plan, the design, or the idea. It writes nothing by default; pass `docs` (as in `/mattpocock-skills:grilling docs`) to let it keep the `GLOSSARY.md` entries and ADRs the interview actually earned.
+- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)**: a relentless interview that sharpens the plan, the design, or the idea, and leaves a paper trail behind it, keeping the `GLOSSARY.md` entries and ADRs the interview actually earned.
 - **[to-spec](./skills/engineering/to-spec/SKILL.md)**: turn the shared understanding into a spec.
 - **[to-tickets](./skills/engineering/to-tickets/SKILL.md)**: turn the spec into tracer-bullet tickets, each one declaring what blocks it.
 - **[implement](./skills/engineering/implement/SKILL.md)**: builds the tickets test-first through [tdd](./skills/engineering/tdd/SKILL.md), then closes out with [code-review](./skills/engineering/code-review/SKILL.md).
 
 Off the flow but always available:
 
-- **[wait-what](./skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, mid-conversation or inside any other skill, and the agent re-pitches it in your language, in plain words, with the context you were missing. `grilling` is the upfront cure; this is the one that works after the fact.
+- **[grill-me](./skills/productivity/grill-me/SKILL.md)**: the same interview with no paper trail at all, for a plan, a design, or a piece of writing with no repo under it.
+- **[wait-what](./skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, mid-conversation or inside any other skill, and the agent re-pitches it in your language, in plain words, with the context you were missing. `grill-with-docs` is the upfront cure; this is the one that works after the fact.
 
 ## Shelved
 
@@ -62,10 +63,10 @@ The other 14 upstream skills are not deleted. They still live in this repo under
 ## Layout
 
 ```
-.claude-plugin/plugin.json       # plugin manifest; the skills array whitelists the 8 enabled skills
+.claude-plugin/plugin.json       # plugin manifest; the skills array whitelists the 9 enabled skills
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace
-skills/engineering/              # the 6 enabled engineering skills
-skills/productivity/             # grilling and wait-what, the enabled productivity skills
+skills/engineering/              # the 7 enabled engineering skills
+skills/productivity/             # grill-me and wait-what, the enabled productivity skills
 skills/_shelved/engineering/     # 10 shelved engineering skills, on disk but not in the manifest
 skills/_shelved/productivity/    # 4 shelved productivity skills, on disk but not in the manifest
 ```
