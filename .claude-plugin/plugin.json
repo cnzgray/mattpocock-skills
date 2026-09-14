@@ -1,7 +1,7 @@
 {
   "name": "mattpocock-skills",
   "version": "1.2.3",
-  "description": "Matt Pocock's agent skills for real engineering: grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills. All 25 skills for real engineering (grilling, spec and ticket flows, TDD, code review, domain modelling and more), repackaged as a Claude Code plugin with no Codex agent metadata and no third-party skill-installer tooling.",
   "author": {
     "name": "Matt Pocock",
     "url": "https://www.aihero.dev"
