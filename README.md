@@ -60,19 +60,14 @@ The other 18 upstream skills are not deleted. They still live in this repo under
 ```
 .claude-plugin/plugin.json       # plugin manifest; the skills array whitelists the 7 enabled skills
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace
-agents/researcher.md             # read-only investigator: grilling fact-finding, codebase walkthroughs
-agents/standards-reviewer.md     # code-review's Standards axis
-agents/spec-reviewer.md          # code-review's Spec axis
 skills/engineering/              # the 6 enabled engineering skills
 skills/productivity/             # grilling, the enabled productivity skill
 skills/_shelved/engineering/     # 10 shelved engineering skills, on disk but not in the manifest
 skills/_shelved/productivity/    # 5 shelved productivity skills, on disk but not in the manifest
 ```
 
-Sub-agents ship under the same namespace as the skills: `mattpocock-skills:researcher`, `mattpocock-skills:standards-reviewer`, `mattpocock-skills:spec-reviewer`. Renaming the plugin renames both.
-
 ## Credit & license
 
 All skill content © Matt Pocock, [MIT](./LICENSE). This repo is an unofficial fork, and upstream is the source of truth: [mattpocock/skills](https://github.com/mattpocock/skills).
 
-Skill bodies are carried over from upstream, with four deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the prose that says "spawn a sub-agent" names the profiles in `agents/` instead, the places where two files disagreed about the same convention have been reconciled, and this fork is narrowed to 7 enabled skills with the other 18 parked under `skills/_shelved/` out of the manifest. Everything else is upstream's. Re-syncing is a diff of `skills/` (enabled and shelved) against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` only need a version bump when upstream ships one.
+Skill bodies are carried over from upstream, with three deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the places where two files disagreed about the same convention have been reconciled, and this fork is narrowed to 7 enabled skills with the other 18 parked under `skills/_shelved/` out of the manifest. Everything else is upstream's. Re-syncing is a diff of `skills/` (enabled and shelved) against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` only need a version bump when upstream ships one.
