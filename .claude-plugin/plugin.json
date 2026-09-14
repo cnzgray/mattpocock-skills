@@ -1,7 +1,7 @@
 {
   "name": "mattpocock-skills",
   "version": "1.2.3",
-  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills. All 25 skills for real engineering (grilling, spec and ticket flows, TDD, code review, domain modelling and more), repackaged as a Claude Code plugin with no Codex agent metadata and no third-party skill-installer tooling.",
+  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a small working set: grilling, the spec and ticket flow, implement, TDD and code review. 18 further skills stay in the repo under skills/_shelved, one manifest entry away from being re-enabled.",
   "author": {
     "name": "Matt Pocock",
     "url": "https://www.aihero.dev"
@@ -19,30 +19,12 @@
     "productivity"
   ],
   "skills": [
-    "./skills/engineering/ask-matt",
-    "./skills/engineering/diagnosing-bugs",
-    "./skills/engineering/grill-with-docs",
-    "./skills/engineering/triage",
-    "./skills/engineering/improve-codebase-architecture",
     "./skills/engineering/setup-matt-pocock-skills",
-    "./skills/engineering/tdd",
     "./skills/engineering/to-spec",
     "./skills/engineering/to-tickets",
-    "./skills/engineering/wayfinder",
     "./skills/engineering/implement",
-    "./skills/engineering/prototype",
-    "./skills/engineering/research",
-    "./skills/engineering/domain-modeling",
-    "./skills/engineering/codebase-design",
+    "./skills/engineering/tdd",
     "./skills/engineering/code-review",
-    "./skills/engineering/resolving-merge-conflicts",
-    "./skills/engineering/wizard",
-    "./skills/productivity/grill-me",
-    "./skills/productivity/grilling",
-    "./skills/productivity/handoff",
-    "./skills/productivity/teach",
-    "./skills/productivity/to-questionnaire",
-    "./skills/productivity/wait-what",
-    "./skills/productivity/writing-for-agents"
+    "./skills/productivity/grilling"
   ]
 }
