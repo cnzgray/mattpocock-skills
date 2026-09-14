@@ -1,6 +1,8 @@
 ---
 name: grilling
-description: "A relentless interview to sharpen a plan, a design, or an idea, which decides as it goes whether the conversation has earned a paper trail."
+description: "A relentless interview to sharpen a plan, a design, or an idea. Writes nothing by default; pass docs to let it keep a GLOSSARY.md entry or an ADR."
+argument-hint: "[docs]"
+arguments: [docs]
 disable-model-invocation: true
 ---
 
@@ -28,12 +30,14 @@ Finding _facts_ is your job, never the user's. When a frontier question needs a 
 
 The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.
 
-## Whether this earns a paper trail
+## Whether this writes anything
 
-The interview produces documents only when the conversation has actually settled something worth keeping. Deciding that is part of the interview, not a mode you pick up front.
+By default this interview writes nothing. Talk, decide, and leave the repo alone. Only when the call passed `docs` does the flag below turn on, and only then may files be written.
 
-Write a `GLOSSARY.md` entry the moment a term is resolved: challenge it against the existing language, sharpen it, then capture it right there rather than batching. Use [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md). `GLOSSARY.md` is a glossary and nothing else: it stays totally devoid of implementation details, and is never a spec, a scratch pad, or a home for implementation decisions. In a multi-context repo, `GLOSSARY-MAP.md` points at one `GLOSSARY.md` per context.
+**With `$docs` given:** keep a `GLOSSARY.md` entry for a term the interview resolves, but only when it is language the project will actually keep, the kind that ends up in code, in interfaces, in issue titles, in test names. A term coined to get through this one conversation stays in the conversation. Use [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md). `GLOSSARY.md` is a glossary and nothing else: it stays devoid of implementation details, and is never a spec, a scratch pad, or a home for implementation decisions. In a multi-context repo, `GLOSSARY-MAP.md` points at one `GLOSSARY.md` per context.
 
 Offer an ADR only when all three hold: the decision is hard to reverse, a future reader will wonder why it was done this way, and it came out of a real trade-off. If any one is missing, skip it. Use [ADR-FORMAT.md](./ADR-FORMAT.md).
 
-Create files lazily: only when there is something to write. A conversation that settles nothing new writes nothing.
+Create files lazily: a term that never came up writes nothing, and a decision that cleared only two of the three ADR conditions writes nothing. Writing a document is never the price of finishing the interview.
+
+**Without `$docs`:** write no files at all, not a glossary entry, not an ADR, not a scratch note. If the interview did settle language or a decision worth keeping, say so in the conversation and name what a `/mattpocock-skills:grilling docs` rerun would capture; do not write it now.

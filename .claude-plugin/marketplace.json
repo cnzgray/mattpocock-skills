@@ -9,7 +9,7 @@
     {
       "name": "mattpocock-skills",
       "source": "./",
-      "description": "Claude Code native fork of Matt Pocock's agent skills: grilling, the spec and ticket flow, implement, TDD and code review, with 18 further skills parked in the repo out of the manifest.",
+      "description": "Claude Code native fork of Matt Pocock's agent skills: grilling, the spec and ticket flow, implement, TDD and code review, with 14 further skills parked in the repo out of the manifest.",
       "category": "engineering",
       "keywords": [
         "engineering",

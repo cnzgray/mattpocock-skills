@@ -28,7 +28,7 @@ Scan `docs/adr/` for the highest existing number and increment by one.
 
 ## When to offer an ADR
 
-The threshold for offering one lives in [SKILL.md](./SKILL.md) ("Whether this earns a paper trail"): all three of hard-to-reverse, surprising-without-context, and a real trade-off must be true. This file only covers the format.
+The threshold for offering one lives in [SKILL.md](./SKILL.md) ("Whether this writes anything"): all three of hard-to-reverse, surprising-without-context, and a real trade-off must be true. This file only covers the format.
 
 ### What qualifies
 
