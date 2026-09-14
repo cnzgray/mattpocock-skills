@@ -1,13 +1,13 @@
 {
   "name": "mattpocock-skills",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a small working set: grilling, the spec and ticket flow, implement, TDD and code review. 18 further skills stay in the repo under skills/_shelved, one manifest entry away from being re-enabled.",
   "author": {
-    "name": "Matt Pocock",
-    "url": "https://www.aihero.dev"
+    "name": "cnzgray",
+    "url": "https://github.com/cnzgray"
   },
-  "homepage": "https://www.aihero.dev/s/skills-newsletter",
-  "repository": "https://github.com/mattpocock/skills",
+  "homepage": "https://github.com/cnzgray/mattpocock-skills",
+  "repository": "https://github.com/cnzgray/mattpocock-skills",
   "license": "MIT",
   "keywords": [
     "engineering",

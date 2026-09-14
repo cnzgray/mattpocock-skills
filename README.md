@@ -9,14 +9,14 @@ What is not here: the Codex agent metadata, the docs site, the repo authoring no
 ## Install
 
 ```bash
-claude plugin marketplace add <owner>/mattpocock-skills
+claude plugin marketplace add cnzgray/mattpocock-skills
 claude plugin install mattpocock-skills@mattpocock
 ```
 
 Or from inside a session:
 
 ```
-/plugin marketplace add <owner>/mattpocock-skills
+/plugin marketplace add cnzgray/mattpocock-skills
 /plugin install mattpocock-skills@mattpocock
 ```
 

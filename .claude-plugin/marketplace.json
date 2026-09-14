@@ -1,15 +1,15 @@
 {
   "name": "mattpocock",
   "owner": {
-    "name": "Matt Pocock",
-    "url": "https://www.aihero.dev"
+    "name": "cnzgray",
+    "url": "https://github.com/cnzgray"
   },
-  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills: all 25 skills, with no Codex agent metadata and no third-party skill-installer tooling.",
+  "description": "A personal Claude Code plugin marketplace holding a narrowed fork of Matt Pocock's agent skills.",
   "plugins": [
     {
       "name": "mattpocock-skills",
       "source": "./",
-      "description": "Matt Pocock's agent skills for real engineering (grilling, spec and ticket flows, TDD, code review, domain modelling and more), repackaged as a Claude Code plugin with all 25 skills and no Codex agent metadata.",
+      "description": "Claude Code native fork of Matt Pocock's agent skills: grilling, the spec and ticket flow, implement, TDD and code review, with 18 further skills parked in the repo out of the manifest.",
       "category": "engineering",
       "keywords": [
         "engineering",
