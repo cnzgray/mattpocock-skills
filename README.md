@@ -46,7 +46,7 @@ The main flow is **idea to ship**. [ask-matt](./skills/engineering/ask-matt/SKIL
 grill-with-docs → to-spec → to-tickets → implement (tdd + code-review) → commit
 ```
 
-- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)**: relentless interview that sharpens the idea and leaves a paper trail behind it (a `CONTEXT.md` glossary plus ADRs).
+- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)**: relentless interview that sharpens the idea and leaves a paper trail behind it (a `GLOSSARY.md` glossary plus ADRs).
 - **[to-spec](./skills/engineering/to-spec/SKILL.md)** then **[to-tickets](./skills/engineering/to-tickets/SKILL.md)**: turn the thread into a spec, then into tracer-bullet tickets, each one declaring what blocks it.
 - **[implement](./skills/engineering/implement/SKILL.md)**: builds the tickets test-first through [tdd](./skills/engineering/tdd/SKILL.md), then closes out with [code-review](./skills/engineering/code-review/SKILL.md).
 
