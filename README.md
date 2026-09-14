@@ -67,7 +67,7 @@ The rest, standalone:
 - **[handoff](./skills/productivity/handoff/SKILL.md)**: compact the current conversation into a handoff document so another agent can pick the work up.
 - **[teach](./skills/productivity/teach/SKILL.md)**: teach you a new skill or concept over multiple sessions, using the current directory as a stateful teaching workspace.
 - **[to-questionnaire](./skills/productivity/to-questionnaire/SKILL.md)**: turn a decision you cannot answer alone into a questionnaire for the one person who can.
-- **[wait-what](./skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, and the agent re-pitches it in plain English with the context you were missing.
+- **[wait-what](./skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, and the agent re-pitches it in your language, in plain words, with the context you were missing.
 - **[writing-for-agents](./skills/productivity/writing-for-agents/SKILL.md)**: rules for writing the documents agents read, including skills and `CLAUDE.md`.
 - **[codebase-design](./skills/engineering/codebase-design/SKILL.md)**: shared vocabulary for designing deep modules, meaning a lot of behaviour behind a small interface.
 - **[domain-modeling](./skills/engineering/domain-modeling/SKILL.md)**: actively sharpen a project's domain model, challenging terms and stress-testing them against edge cases.
@@ -78,10 +78,10 @@ The rest, standalone:
 ```
 .claude-plugin/plugin.json       # plugin manifest; the skills array lists all 25 shipped skills
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace
-skills/engineering/              # 18 skills
 agents/researcher.md             # read-only investigator: research, grilling fact-finding, wayfinder research tickets, codebase walkthroughs, design-it-twice
 agents/standards-reviewer.md     # code-review's Standards axis
 agents/spec-reviewer.md          # code-review's Spec axis
+skills/engineering/              # 18 skills
 skills/productivity/             # 7 skills
 ```
 
@@ -91,4 +91,4 @@ Sub-agents ship under the same namespace as the skills: `mattpocock-skills:resea
 
 All skill content © Matt Pocock, [MIT](./LICENSE). This repo is an unofficial fork, and upstream is the source of truth: [mattpocock/skills](https://github.com/mattpocock/skills).
 
-Skill bodies are unchanged from upstream, so re-syncing is just a diff of `skills/` against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` only need a version bump when upstream ships one.
+Skill bodies are carried over from upstream, with three deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the prose that says "spawn a sub-agent" names the profiles in `agents/` instead, and the places where two files disagreed about the same convention have been reconciled. Everything else is upstream's. Re-syncing is a diff of `skills/` against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` only need a version bump when upstream ships one.
