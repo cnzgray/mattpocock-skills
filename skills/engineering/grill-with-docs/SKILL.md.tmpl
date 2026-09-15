@@ -6,12 +6,12 @@ disable-model-invocation: true
 
 {{include:skills/_source/grilling/grilling-protocol.md}}
 
+{{include:skills/_source/domain-modeling/domain-modeling.md}}
+
 ## Whether this writes anything
 
 This one is stateful: it retains what the interview settles. It is for the interview you are having **inside a repo**, where there is somewhere to leave the paper trail. If there is no working directory, use `grill-me` instead.
 
-Keep a `GLOSSARY.md` entry for a term the interview resolves, but only when it is language the project will actually keep, the kind that ends up in code, in interfaces, in issue titles, in test names. A term coined to get through this one conversation stays in the conversation. Use [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md). `GLOSSARY.md` is a glossary and nothing else: it stays devoid of implementation details, and is never a spec, a scratch pad, or a home for implementation decisions. In a multi-context repo, `GLOSSARY-MAP.md` points at one `GLOSSARY.md` per context.
+Keep a `GLOSSARY.md` entry for a term the interview resolves, but only when it is language the project will actually keep, the kind that ends up in code, in interfaces, in issue titles, in test names. A term coined to get through this one conversation stays in the conversation.
 
-Offer an ADR only when all three hold: the decision is hard to reverse, a future reader will wonder why it was done this way, and it came out of a real trade-off. If any one is missing, skip it. Use [ADR-FORMAT.md](./ADR-FORMAT.md).
-
-Create files lazily: a term that never came up writes nothing, and a decision that cleared only two of the three ADR conditions writes nothing. Writing a document is never the price of finishing the interview.
+Writing a document is never the price of finishing the interview.
