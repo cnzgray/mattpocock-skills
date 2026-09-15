@@ -1,7 +1,7 @@
 {
   "name": "mattpocock-skills",
   "version": "1.3.0",
-  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set: the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research and design tools. 8 further skills stay in the repo under skills/_shelved, one manifest entry away from being re-enabled.",
+  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set: the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research, design, upkeep and tracker tools. 2 further skills stay in the repo under skills/_shelved (the ask-matt router and to-questionnaire), one manifest entry away from being re-enabled.",
   "author": {
     "name": "cnzgray",
     "url": "https://github.com/cnzgray"
@@ -31,8 +31,14 @@
     "./skills/engineering/research",
     "./skills/engineering/prototype",
     "./skills/engineering/wizard",
+    "./skills/engineering/resolving-merge-conflicts",
+    "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/triage",
+    "./skills/engineering/wayfinder",
     "./skills/productivity/wait-what",
     "./skills/productivity/grill-me",
-    "./skills/productivity/writing-for-agents"
+    "./skills/productivity/writing-for-agents",
+    "./skills/productivity/handoff",
+    "./skills/productivity/teach"
   ]
 }

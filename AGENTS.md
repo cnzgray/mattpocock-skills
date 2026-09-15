@@ -1,0 +1,6 @@
+# AGENTS.md
+
+## Composing skills: inline, don't call
+
+A skill must be self-sufficient. Inline shared text through the template mechanism, never as a hand copy: give the skill a sibling `X.md.tmpl`, pull the protocol in with a standalone `{{include:skills/_source/<path>}}` line, run `scripts/generate-skills.py`, and commit the rendered file. One `{{include}}` per need keeps a single source of truth (e.g. `improve-codebase-architecture` inlines the grilling protocol via `{{include:skills/_source/grilling/grilling-protocol.md}}` instead of reaching for a skill call).
+Do NOT write "Call the Skill tool with …" inside a skill body. Chaining skills like method calls turns the agent's on-demand judgement into a hard-coded step, nests the target's full text inside this skill's run, and breaks the flow whenever the target gets shelved or folded. A skill is consumed exactly two ways: a human invokes it by name, or the agent fires it on its own judgement, driven by the skill's `description` trigger words — never because another skill's body commanded it. This repo has zero such calls. Everything a skill needs every run is inlined through the template mechanism; reference shared across skills lives in `_source` with one rendered copy per consuming skill.
