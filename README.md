@@ -67,9 +67,20 @@ The other 14 upstream skills are not deleted. They still live in this repo under
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace
 skills/engineering/              # the 7 enabled engineering skills
 skills/productivity/             # grill-me and wait-what, the enabled productivity skills
+skills/_source/                  # shared injection sources, pulled into templates by path; every
+                                 # shared unit gets its own subdirectory, e.g. grilling/, domain-modeling/
 skills/_shelved/engineering/     # 10 shelved engineering skills, on disk but not in the manifest
 skills/_shelved/productivity/    # 4 shelved productivity skills, on disk but not in the manifest
+scripts/generate-skills.py       # renders every committed X.tmpl into the file X beside it
 ```
+
+## Maintaining the generated skills
+
+Generated files follow one convention: any committed `X.tmpl` renders to the file `X` beside it, so `skills/productivity/grill-me/SKILL.md.tmpl` produces that skill's `SKILL.md`. Inside a template, a line that is exactly `{{include:path/relative/to/the/repo/root}}` is replaced by the full contents of that file (it must end with a newline, and the placeholder must be the whole line); every other line is copied through unchanged. That is how `grill-me` and `grill-with-docs` share the interview in `skills/_source/grilling/grilling-protocol.md` while each keeps its own frontmatter and closing section.
+
+Edit a template or any file it includes, run `python3 scripts/generate-skills.py`, and commit the rendered files: plugin distribution reads the committed `SKILL.md` files and runs no build step.
+
+Shared sources live under `skills/_source/`, one subdirectory per shared unit: `skills/_source/grilling/` holds the interview shared by `grill-me` and `grill-with-docs`, and `skills/_source/domain-modeling/` holds the domain-modeling body plus its `GLOSSARY-FORMAT.md` and `ADR-FORMAT.md` siblings. When an included source links to a sibling file in its own directory (a relative link like `[GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md)`), the consuming skill's directory needs one single-line shim template per sibling so that link resolves inside the consuming directory. For example `skills/engineering/grill-with-docs/GLOSSARY-FORMAT.md.tmpl` containing only `{{include:skills/_source/domain-modeling/GLOSSARY-FORMAT.md}}` renders that sibling beside the consuming `SKILL.md`, which is what the relative link resolves against at read time.
 
 ## Credit & license
 
