@@ -1,7 +1,7 @@
 {
   "name": "mattpocock-skills",
-  "version": "1.3.0",
-  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set: the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research, design, upkeep and tracker tools. 2 further skills stay in the repo under skills/_shelved (the ask-matt router and to-questionnaire), one manifest entry away from being re-enabled.",
+  "version": "1.4.0",
+  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set of 21: the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research, design, upkeep and tracker tools. 2 further skills stay in the repo under dev/shelved (the ask-matt router and to-questionnaire), out of the plugin root entirely.",
   "author": {
     "name": "cnzgray",
     "url": "https://github.com/cnzgray"
