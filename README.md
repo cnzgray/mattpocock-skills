@@ -2,7 +2,7 @@
 
 [Matt Pocock's agent skills](https://github.com/mattpocock/skills), the "Skills for Real Engineers" set, packaged as a **native Claude Code plugin**.
 
-This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 21 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 16 engineering plus 5 productivity. The 2 upstream skills I did not keep are not deleted; they are parked out of the manifest under [`dev/shelved/`](./dev/shelved) (see [Shelved](#shelved)). Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
+This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 23 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 17 engineering plus 6 productivity. Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
 
 What is not here: the Codex agent metadata, the docs site, the repo authoring notes, the scripts, and the release tooling that only ever mattered inside the upstream repo. If you want those, go upstream.
 
@@ -55,23 +55,68 @@ Off the flow but always available:
 
 - **[grill-me](./plugin/skills/productivity/grill-me/SKILL.md)**: the same interview with no paper trail at all, for a plan, a design, or a piece of writing with no repo under it.
 - **[wait-what](./plugin/skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, mid-conversation or inside any other skill, and the agent re-pitches it in your language, in plain words, with the context you were missing. `grill-with-docs` is the upfront cure; this is the one that works after the fact.
+- **[ask-matt](./plugin/skills/engineering/ask-matt/SKILL.md)**: the router. Describe your situation and it points you at the skill or flow that fits, plus the five options at a phase boundary.
+- **[to-questionnaire](./plugin/skills/productivity/to-questionnaire/SKILL.md)**: when the thing blocking you is in someone else's head, it interviews you about the send and writes them a questionnaire to fill in.
 
-## Shelved
+## Skills
 
-The 2 skills I did not keep are not deleted. They still live in this repo under `dev/shelved/engineering/` and `dev/shelved/productivity/`, bodies untouched. `plugin.json`'s `skills` array is a whitelist: a skill whose folder exists under `plugin/` but whose path is not in the array simply does not load. Only `plugin/` is distributed, though, so the array is not the whole story: to re-enable a shelved skill, move its directory into `plugin/skills/` **and** add its path (for example `./skills/engineering/ask-matt`) back to the array. Adding the array entry alone would point at a path that is not in the plugin root at all.
+All 23 enabled skills, grouped the way upstream splits them ([`.agents/invocation.md`](https://github.com/mattpocock/skills/blob/main/.agents/invocation.md)): the one axis that matters is **who can reach a skill**. Every command is namespaced, so you type `/mattpocock-skills:<name>`.
+
+### User-invoked — only you can trigger these
+
+`disable-model-invocation: true`. The model cannot load them, their description never enters context, and Claude Code refuses the call and tells the model not to reproduce the steps another way. Reach them by typing `/mattpocock-skills:<name>`.
+
+**Engineering** — the idea-to-ship flow, plus its upkeep:
+
+- **[ask-matt](./plugin/skills/engineering/ask-matt/SKILL.md)**: ask which skill or flow fits your situation — a router over the skills in this plugin, and over the five options at a phase boundary.
+- **[grill-with-docs](./plugin/skills/engineering/grill-with-docs/SKILL.md)**: a relentless interview that sharpens the plan, the design, or the idea, and builds this repo's domain docs as it goes: `GLOSSARY.md` entries and ADRs.
+- **[to-spec](./plugin/skills/engineering/to-spec/SKILL.md)**: turn the current conversation into a spec and publish it to the issue tracker. No interview, just synthesis of what you already discussed.
+- **[to-tickets](./plugin/skills/engineering/to-tickets/SKILL.md)**: break a plan, spec, or conversation into tracer-bullet tickets, each declaring its blocking edges, on the configured tracker.
+- **[implement](./plugin/skills/engineering/implement/SKILL.md)**: build the work described by a spec or set of tickets, test-first, closing out with a review before committing.
+- **[wayfinder](./plugin/skills/engineering/wayfinder/SKILL.md)**: plan a chunk of work too big for one agent session as a shared map of decision tickets, resolved one at a time until the route is clear.
+- **[triage](./plugin/skills/engineering/triage/SKILL.md)**: move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.
+- **[improve-codebase-architecture](./plugin/skills/engineering/improve-codebase-architecture/SKILL.md)**: scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
+- **[mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md)**: configure this repo for the engineering skills — issue tracker, triage label vocabulary, domain doc layout. Run once per repo.
+
+**Productivity**:
+
+- **[grill-me](./plugin/skills/productivity/grill-me/SKILL.md)**: the same relentless interview, with no paper trail. For a plan, a design, or a piece of writing with no repo under it.
+- **[wait-what](./plugin/skills/productivity/wait-what/SKILL.md)**: fire this the moment a message does not land, mid-conversation or inside any other skill, and the agent re-pitches it in your language, in plain words, with the context you were missing.
+- **[handoff](./plugin/skills/productivity/handoff/SKILL.md)**: compact the current conversation into a handoff document so a fresh agent can pick up the work. Takes a hint for what the next session is for.
+- **[teach](./plugin/skills/productivity/teach/SKILL.md)**: teach you a new skill or concept within this workspace, over multiple sessions. Takes the topic as its argument.
+- **[to-questionnaire](./plugin/skills/productivity/to-questionnaire/SKILL.md)**: turn a decision you can't answer alone into a questionnaire for the person who holds the knowledge, targeting the gap between what they know and what you need.
+
+### Model-invoked — you or the model can trigger these
+
+The default: no `disable-model-invocation`. The description stays in context and the model reaches for the skill on its own when it applies; you can still type `/mattpocock-skills:<name>`.
+
+**Engineering**:
+
+- **[tdd](./plugin/skills/engineering/tdd/SKILL.md)**: test-driven development. The reference that makes the red-green-refactor loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop.
+- **[code-review](./plugin/skills/engineering/code-review/SKILL.md)**: review the changes since a fixed point along two axes — Standards (does it follow this repo's documented coding standards?) and Spec (does it match what the originating issue asked for?) — in parallel sub-agents, reported side by side.
+- **[diagnosing-bugs](./plugin/skills/engineering/diagnosing-bugs/SKILL.md)**: a diagnosis loop for hard bugs and performance regressions, gated phase by phase. Skip phases only when explicitly justified.
+- **[codebase-design](./plugin/skills/engineering/codebase-design/SKILL.md)**: the shared vocabulary for designing deep modules — a lot of behaviour behind a small interface, at a clean seam, testable through that interface.
+- **[research](./plugin/skills/engineering/research/SKILL.md)**: investigate a question against primary sources and capture the findings as a cited Markdown file in the repo, run as a background agent so you keep working.
+- **[prototype](./plugin/skills/engineering/prototype/SKILL.md)**: build throwaway code that answers a design question — is this state model right, what should this UI look like.
+- **[wizard](./plugin/skills/engineering/wizard/SKILL.md)**: generate an interactive bash wizard that walks a human through steps only they can perform: provisioning, credentials, CI secrets, an unfamiliar dashboard, a one-off migration.
+- **[resolving-merge-conflicts](./plugin/skills/engineering/resolving-merge-conflicts/SKILL.md)**: work through an in-progress merge or rebase conflict, tracing each side back to its primary source and resolving by intent.
+
+**Productivity**:
+
+- **[writing-for-agents](./plugin/skills/productivity/writing-for-agents/SKILL.md)**: reference for writing any document an agent consumes — a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer.
+
+> **Harness note.** "Only you can trigger these" is Claude Code's semantics for `disable-model-invocation`, verified against Claude Code 2.1.261. Other harnesses that read the same `SKILL.md` files do not necessarily agree. In omp, for example, the same field only removes the skill from the rendered system-prompt listing; the model can still read it through `skill://<name>` and you can still reach it as `/skill:<name>`. Check your harness before relying on the split.
 
 ## Layout
 
 ```
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace; points at ./plugin
-plugin/.claude-plugin/plugin.json # plugin manifest; the skills array whitelists the 21 enabled skills
-plugin/skills/engineering/       # the 16 enabled engineering skills
-plugin/skills/productivity/      # the 5 enabled productivity skills
+plugin/.claude-plugin/plugin.json # plugin manifest; the skills array whitelists the 23 enabled skills
+plugin/skills/engineering/       # the 17 enabled engineering skills
+plugin/skills/productivity/      # the 6 enabled productivity skills
 dev/templates/skills/            # the 12 *.tmpl templates, mirroring the plugin tree
 dev/source/                      # shared injection sources, pulled into templates by path; every
                                  # shared unit gets its own subdirectory, e.g. grilling/, domain-modeling/
-dev/shelved/engineering/         # the shelved engineering skill, on disk but not in the manifest
-dev/shelved/productivity/        # the shelved productivity skill, on disk but not in the manifest
 scripts/generate-skills.py       # renders dev/templates/**.tmpl into the mirrored file under plugin/
 AGENTS.md                        # repo authoring notes (author-side, never distributed)
 README.md                        # this file (author-side, never distributed)
@@ -91,4 +136,4 @@ Shared sources live under `dev/source/`, one subdirectory per shared unit: `dev/
 
 All skill content © Matt Pocock, [MIT](./LICENSE). This repo is an unofficial fork, and upstream is the source of truth: [mattpocock/skills](https://github.com/mattpocock/skills).
 
-Skill bodies are carried over from upstream, with three deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the places where two files disagreed about the same convention have been reconciled, and this fork is narrowed to 21 enabled skills with the other 2 parked under `dev/shelved/` out of the manifest. Everything else is upstream's. Re-syncing is a diff of `plugin/skills/` (enabled) and `dev/shelved/` (shelved) against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` and `plugin/.claude-plugin/` only need a version bump when upstream ships one.
+Skill bodies are carried over from upstream, with four deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the places where the text disagreed with itself — across two files or inside one — have been reconciled, two upstream skills are folded into their consumers rather than shipped as entries of their own (`grilling`, whose interview now lives inside `grill-me` and `grill-with-docs`, and `domain-modeling`, which `grill-with-docs` runs inline), and the setup skill is renamed to `mattpocock-skills-setup`. Everything else is upstream's. Re-syncing is a diff of `plugin/skills/` against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` and `plugin/.claude-plugin/` only need a version bump when upstream ships one.

@@ -1,7 +1,7 @@
 {
   "name": "mattpocock-skills",
-  "version": "1.4.0",
-  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set of 21: the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research, design, upkeep and tracker tools. 2 further skills stay in the repo under dev/shelved (the ask-matt router and to-questionnaire), out of the plugin root entirely.",
+  "version": "1.5.0",
+  "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set of 23: the ask-matt router, the two grilling entries, the spec and ticket flow, implement, TDD and code review, plus the debugging, research, design, upkeep, tracker and questionnaire tools.",
   "author": {
     "name": "cnzgray",
     "url": "https://github.com/cnzgray"
@@ -19,6 +19,7 @@
     "productivity"
   ],
   "skills": [
+    "./skills/engineering/ask-matt",
     "./skills/engineering/mattpocock-skills-setup",
     "./skills/engineering/to-spec",
     "./skills/engineering/to-tickets",
@@ -39,6 +40,7 @@
     "./skills/productivity/grill-me",
     "./skills/productivity/writing-for-agents",
     "./skills/productivity/handoff",
-    "./skills/productivity/teach"
+    "./skills/productivity/teach",
+    "./skills/productivity/to-questionnaire"
   ]
 }

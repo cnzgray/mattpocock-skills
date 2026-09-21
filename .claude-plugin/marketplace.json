@@ -9,7 +9,7 @@
     {
       "name": "mattpocock-skills",
       "source": "./plugin",
-      "description": "Claude Code native fork of Matt Pocock's agent skills: 21 enabled skills covering the grilling entries, the spec and ticket flow, implement, TDD and code review, with 2 further skills parked out of the manifest under dev/shelved/.",
+      "description": "Claude Code native fork of Matt Pocock's agent skills: 23 enabled skills covering the ask-matt router, the grilling entries, the spec and ticket flow, implement, TDD and code review.",
       "category": "engineering",
       "keywords": [
         "engineering",

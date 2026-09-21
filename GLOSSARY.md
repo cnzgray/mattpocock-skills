@@ -1,6 +1,6 @@
 # mattpocock-skills
 
-Matt Pocock 上游技能集的非官方个人 fork，打包成原生 Claude Code 插件分发。本仓库同时是插件产物本身与它的编写台：分发读的是提交进 `plugin/` 的技能正文，而 `skills` 白名单决定哪些技能真的会被加载。编写台的那一半——模板、共享正文、下架技能、脚本——一律待在 plugin root 之外，不会被复制到用户机器上。
+Matt Pocock 上游技能集的非官方个人 fork，打包成原生 Claude Code 插件分发。本仓库同时是插件产物本身与它的编写台：分发读的是提交进 `plugin/` 的技能正文，而 `skills` 白名单决定哪些技能真的会被加载。编写台的那一半——模板、共享正文、脚本——一律待在 plugin root 之外，不会被复制到用户机器上。
 
 ## Language
 
@@ -34,9 +34,9 @@ _Avoid_: skill list、include list、enabled list
 目录在 `plugin/skills/<category>/<name>/` 且路径在白名单里的技能：会被加载，调用名是 `/mattpocock-skills:<name>`。
 _Avoid_: active skill、installed skill、live skill
 
-**Shelved skill**:
-被移出白名单的上游技能，目录停在 `dev/shelved/<category>/<name>/`，正文一字未改。它与 enabled skill 的差别现在是两条：不在白名单，也不在 plugin root 里——重新启用要把目录搬进 `plugin/skills/` 再加白名单路径。
-_Avoid_: disabled skill、removed skill、archived skill、dead skill
+**Folded skill**:
+上游有、本仓库不作为独立条目发布，而是把正文内联进消费方技能的那种：`grilling` 折进 `grill-me`、`grill-with-docs`，以及内部同样跑这份协议的 `triage`、`wayfinder`、`improve-codebase-architecture`；`domain-modeling` 折进 `grill-with-docs`。正文的唯一副本在 `dev/source/<unit>/`，由 template 渲染进消费方目录，所以它没有自己的命令，只会作为消费方技能的一部分出现。
+_Avoid_: merged skill、inlined skill、delisted skill
 
 **Namespace**:
 已安装插件的调用前缀 `/mattpocock-skills:`。插件技能总是带命名空间，没有裸名调用。
@@ -47,15 +47,15 @@ _Avoid_: prefix、scope
 _Avoid_: origin、base repo、source repo
 
 **Fork**:
-本仓库自身：upstream 的非官方个人分支，收窄到实际在用的技能集，并把其余技能停在 shelved 状态。
+本仓库自身：upstream 的非官方个人分支，收窄到实际在用的技能集，并把两个上游技能折叠进消费方而不单独分发（grilling、domain-modeling）。
 _Avoid_: clone、downstream、derivative
 
 **Divergence**:
-fork 与 upstream 之间刻意保留的差异；不写明就会被读成失同步。本仓库有三处：领域文档约定改名为 `GLOSSARY.md`、互相打架的约定之间做了调和、启用的技能集被收窄。
+fork 与 upstream 之间刻意保留的差异；不写明就会被读成失同步。本仓库有四处：领域文档约定改名为 `GLOSSARY.md`、互相打架的约定之间做了调和、grilling 与 domain-modeling 被折叠进消费方、setup 技能改名为 mattpocock-skills-setup。
 _Avoid_: diff、delta、customization
 
 **Re-sync**:
-把本仓库 `plugin/skills/`（enabled）与 `dev/shelved/`（shelved）按相同路径与 upstream 做 diff，再搬入变化的那一步。manifest 只在 upstream 发版本时跟一次。
+把本仓库 `plugin/skills/` 按相同路径与 upstream 做 diff，再搬入变化的那一步。manifest 只在 upstream 发版本时跟一次。
 _Avoid_: merge、update、pull、upgrade
 
 ### 编写与渲染
