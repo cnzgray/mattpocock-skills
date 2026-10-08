@@ -17,4 +17,4 @@ Triage here works in terms of canonical roles. This file maps those roles to the
 
 When a role is referred to (e.g. "apply the AFK-ready triage label"), use the corresponding label string from this table.
 
-Edit the right-hand column to match whatever vocabulary you actually use.
+Edit the "Label in our tracker" column to match whatever vocabulary you actually use.

@@ -101,6 +101,8 @@ The block:
 
 Always include the `### Triage labels` sub-block and write `docs/agents/triage-labels.md`, since `to-tickets` reads its label from there.
 
+On GitHub or GitLab, create each configured label the tracker lacks (`gh label create` / `glab label create`).
+
 Then write the docs files using the seed templates in this skill folder as a starting point:
 
 - [issue-tracker-github.md](./issue-tracker-github.md): GitHub issue tracker
