@@ -2,7 +2,7 @@
 
 [Matt Pocock's agent skills](https://github.com/mattpocock/skills), the "Skills for Real Engineers" set, packaged as a **native Claude Code plugin**.
 
-This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 23 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 17 engineering plus 6 productivity. Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
+This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 25 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 19 engineering plus 6 productivity. Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
 
 What is not here: the Codex agent metadata, the docs site, the repo authoring notes, the scripts, and the release tooling that only ever mattered inside the upstream repo. If you want those, go upstream.
 
@@ -60,7 +60,7 @@ Off the flow but always available:
 
 ## Skills
 
-All 23 enabled skills, grouped the way upstream splits them ([`.agents/invocation.md`](https://github.com/mattpocock/skills/blob/main/.agents/invocation.md)): the one axis that matters is **who can reach a skill**. Every command is namespaced, so you type `/mattpocock-skills:<name>`.
+All 25 enabled skills, grouped the way upstream splits them ([`.agents/invocation.md`](https://github.com/mattpocock/skills/blob/main/.agents/invocation.md)): the one axis that matters is **who can reach a skill**. Every command is namespaced, so you type `/mattpocock-skills:<name>`.
 
 ### User-invoked — only you can trigger these
 
@@ -73,9 +73,11 @@ All 23 enabled skills, grouped the way upstream splits them ([`.agents/invocatio
 - **[to-spec](./plugin/skills/engineering/to-spec/SKILL.md)**: turn the current conversation into a spec and publish it to the issue tracker. No interview, just synthesis of what you already discussed.
 - **[to-tickets](./plugin/skills/engineering/to-tickets/SKILL.md)**: break a plan, spec, or conversation into tracer-bullet tickets, each declaring its blocking edges, on the configured tracker.
 - **[implement](./plugin/skills/engineering/implement/SKILL.md)**: build the work described by a spec or set of tickets, test-first, closing out with a review before committing.
+- **[implement-spec](./plugin/skills/engineering/implement-spec/SKILL.md)**: implement a whole spec on one integration branch — the tickets as a task graph, implementer subagents working the ready frontier in parallel, one code review at the end.
 - **[wayfinder](./plugin/skills/engineering/wayfinder/SKILL.md)**: plan a chunk of work too big for one agent session as a shared map of decision tickets, resolved one at a time until the route is clear.
 - **[triage](./plugin/skills/engineering/triage/SKILL.md)**: move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.
 - **[improve-codebase-architecture](./plugin/skills/engineering/improve-codebase-architecture/SKILL.md)**: scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
+- **[retro](./plugin/skills/engineering/retro/SKILL.md)**: close the loop after a build — suggest changes to the agent's environment rather than the code: navigation pointers, deterministic checks, coding standards, steering files, tooling. Most severe first.
 - **[mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md)**: configure this repo for the engineering skills — issue tracker, triage label vocabulary, domain doc layout. Run once per repo.
 
 **Productivity**:
@@ -99,7 +101,7 @@ The default: no `disable-model-invocation`. The description stays in context and
 - **[research](./plugin/skills/engineering/research/SKILL.md)**: investigate a question against primary sources and capture the findings as a cited Markdown file in the repo, run as a background agent so you keep working.
 - **[prototype](./plugin/skills/engineering/prototype/SKILL.md)**: build throwaway code that answers a design question — is this state model right, what should this UI look like.
 - **[wizard](./plugin/skills/engineering/wizard/SKILL.md)**: generate an interactive bash wizard that walks a human through steps only they can perform: provisioning, credentials, CI secrets, an unfamiliar dashboard, a one-off migration.
-- **[resolving-merge-conflicts](./plugin/skills/engineering/resolving-merge-conflicts/SKILL.md)**: work through an in-progress merge or rebase conflict, tracing each side back to its primary source and resolving by intent.
+- **[pr](./plugin/skills/engineering/pr/SKILL.md)**: the shape a pull request body takes — the smallest visual that makes the change clear, before/after evidence that it works, and a merge-danger call.
 
 **Productivity**:
 
@@ -111,8 +113,8 @@ The default: no `disable-model-invocation`. The description stays in context and
 
 ```
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace; points at ./plugin
-plugin/.claude-plugin/plugin.json # plugin manifest; the skills array whitelists the 23 enabled skills
-plugin/skills/engineering/       # the 17 enabled engineering skills
+plugin/.claude-plugin/plugin.json # plugin manifest; the skills array whitelists the 25 enabled skills
+plugin/skills/engineering/       # the 19 enabled engineering skills
 plugin/skills/productivity/      # the 6 enabled productivity skills
 dev/templates/skills/            # the 12 *.tmpl templates, mirroring the plugin tree
 dev/source/                      # shared injection sources, pulled into templates by path; every
