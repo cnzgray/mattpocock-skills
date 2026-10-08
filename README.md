@@ -6,6 +6,8 @@ This repo is an unofficial personal fork of that project, narrowed to the workin
 
 What is not here: the Codex agent metadata, the docs site, the repo authoring notes, the scripts, and the release tooling that only ever mattered inside the upstream repo. If you want those, go upstream.
 
+Versioning: the plugin keeps its own version line in `plugin.json`, independent of upstream's tags. [`plugin/UPSTREAM-BASE`](./plugin/UPSTREAM-BASE) records which upstream revision the fork is currently synced to (`git describe --tags upstream/main` plus the sync date); update both on every upstream sync.
+
 ## Install
 
 ```bash
@@ -114,6 +116,7 @@ The default: no `disable-model-invocation`. The description stays in context and
 ```
 .claude-plugin/marketplace.json  # makes this repo its own single-plugin marketplace; points at ./plugin
 plugin/.claude-plugin/plugin.json # plugin manifest; the skills array whitelists the 25 enabled skills
+plugin/UPSTREAM-BASE             # the upstream revision this fork is synced to, updated on every sync
 plugin/skills/engineering/       # the 19 enabled engineering skills
 plugin/skills/productivity/      # the 6 enabled productivity skills
 dev/templates/skills/            # the 12 *.tmpl templates, mirroring the plugin tree
