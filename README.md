@@ -42,9 +42,10 @@ npx skills@latest add cnzgray/mattpocock-skills -a opencode
 
 There is no OpenCode plugin to install, and that is not a gap. OpenCode V2 has no plugin-manifest or marketplace format: its `plugin` API is a TypeScript module that registers tools, hooks, and transforms in code, a different layer from a bundle of `SKILL.md` files. The equivalent of a Claude Code plugin on that side is the skill system, and `npx skills` installs into it:
 
-- project scope, the default: `.agents/skills/`, which OpenCode V2 reads as a project compatibility source
-- global scope, with `-g`: `~/.config/opencode/skills`
-- symlink (one canonical copy that every agent directory links to) or copy, your choice at the prompt
+- project scope, the default: `.agents/skills/`
+- global scope, with `-g`: `~/.agents/skills`
+
+OpenCode V2 reads both of those directories directly, so `npx skills` writes one copy per scope and stops there: there is no per-agent directory to link, and no symlink-or-copy prompt. Agents that do own a skill directory get the symlink-or-copy choice instead. OpenCode's native `~/.config/opencode/skills` and `.opencode/skills` are read alongside these, and that is where hand-written skills go.
 
 Install through one route per agent. Taking the Claude Code plugin and this one in the same repo gives you every skill twice, which is upstream's own warning.
 
