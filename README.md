@@ -2,7 +2,7 @@
 
 [Matt Pocock's agent skills](https://github.com/mattpocock/skills), the "Skills for Real Engineers" set, packaged as a **native Claude Code plugin**.
 
-This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 25 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 19 engineering plus 6 productivity. Skills install as namespaced slash commands, `/mattpocock-skills:<name>`.
+This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 25 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 19 engineering plus 6 productivity. On Claude Code they install as namespaced slash commands, `/mattpocock-skills:<name>`; other agents take the same files as bare skill IDs (see [Install](#install)).
 
 What is not here: the Codex agent metadata, the docs site, the repo authoring notes, the scripts, and the release tooling that only ever mattered inside the upstream repo. If you want those, go upstream.
 
@@ -31,6 +31,28 @@ While editing the skills themselves, skip the install step entirely:
 ```bash
 claude --plugin-dir ./plugin
 ```
+
+### OpenCode, and every other agent
+
+Claude Code is the only harness this repo ships a plugin for. Other agents take the same `SKILL.md` files through the [skills.sh](https://skills.sh/mattpocock/skills) CLI, which is what upstream itself points at:
+
+```bash
+npx skills@latest add cnzgray/mattpocock-skills -a opencode
+```
+
+There is no OpenCode plugin to install, and that is not a gap. OpenCode V2 has no plugin-manifest or marketplace format: its `plugin` API is a TypeScript module that registers tools, hooks, and transforms in code, a different layer from a bundle of `SKILL.md` files. The equivalent of a Claude Code plugin on that side is the skill system, and `npx skills` installs into it:
+
+- project scope, the default: `.agents/skills/`, which OpenCode V2 reads as a project compatibility source
+- global scope, with `-g`: `~/.config/opencode/skills`
+- symlink (one canonical copy that every agent directory links to) or copy, your choice at the prompt
+
+Install through one route per agent. Taking the Claude Code plugin and this one in the same repo gives you every skill twice, which is upstream's own warning.
+
+Updates are manual: `npx skills@latest update`, and re-run `add` to pick up skills added since.
+
+Address an OpenCode skill by its bare ID, not by a namespace: `grill-me`, not `/mattpocock-skills:grill-me`. Mention it as `@grill-me` in a prompt, or let the model pick it up on its own. The setup skill is `mattpocock-skills-setup`, run once per repo as on the Claude Code side.
+
+One mismatch to know about: `npx skills` installs every `SKILL.md` it finds in the repo and never reads the `skills` whitelist in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json). The two lists agree today at 25, but a `SKILL.md` dropped under `plugin/skills/` without a whitelist entry reaches OpenCode and not Claude Code.
 
 ## Run `/mattpocock-skills:mattpocock-skills-setup` once per repo
 
@@ -109,7 +131,7 @@ The default: no `disable-model-invocation`. The description stays in context and
 
 - **[writing-for-agents](./plugin/skills/productivity/writing-for-agents/SKILL.md)**: reference for writing any document an agent consumes — a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer.
 
-> **Harness note.** "Only you can trigger these" is Claude Code's semantics for `disable-model-invocation`, verified against Claude Code 2.1.261. Other harnesses that read the same `SKILL.md` files do not necessarily agree. In omp, for example, the same field only removes the skill from the rendered system-prompt listing; the model can still read it through `skill://<name>` and you can still reach it as `/skill:<name>`. Check your harness before relying on the split.
+> **Harness note.** "Only you can trigger these" is Claude Code's semantics for `disable-model-invocation`, verified against Claude Code 2.1.261. Other harnesses that read the same `SKILL.md` files do not necessarily agree. In omp, for example, the same field only removes the skill from the rendered system-prompt listing; the model can still read it through `skill://<name>` and you can still reach it as `/skill:<name>`. OpenCode V2 does agree: the field means the same as its own `metadata.opencode/autoinvoke: false`, so the 16 skills marked that way stay out of the model's available list while you can still load them by ID. Check your harness before relying on the split.
 
 ## Layout
 
