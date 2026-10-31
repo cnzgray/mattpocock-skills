@@ -1,6 +1,6 @@
 {
   "name": "mattpocock-skills",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Unofficial Claude Code native fork of Matt Pocock's agent skills, narrowed to a working set of 25: the ask-matt router, the two grilling entries, the spec and ticket flow, implement and implement-spec, TDD, code review and PR bodies, plus the debugging, research, design, upkeep, tracker, questionnaire and retro tools.",
   "author": {
     "name": "cnzgray",
