@@ -83,6 +83,32 @@ Off the flow but always available:
 - **[ask-matt](./plugin/skills/engineering/ask-matt/SKILL.md)**: the router. Describe your situation and it points you at the skill or flow that fits, plus the five options at a phase boundary.
 - **[to-questionnaire](./plugin/skills/productivity/to-questionnaire/SKILL.md)**: when the thing blocking you is in someone else's head, it interviews you about the send and writes them a questionnaire to fill in.
 
+### Diagrams
+
+Four diagrams of how these skills fit together in day-to-day use, labelled in Simplified Chinese. They use bare skill names, so read `/triage` as `/mattpocock-skills:triage` on Claude Code.
+
+**[Skills map](./docs/agents/mattpocock-skills-map.svg)**: all 25 skills grouped by stage, from intake to retro.
+
+![Skills map](./docs/agents/mattpocock-skills-map.svg)
+
+**[Requirement flow](./docs/agents/workflow-requirement.svg)**: intake, then a spec, then tickets.
+
+![Requirement flow](./docs/agents/workflow-requirement.svg)
+
+**[Bug flow](./docs/agents/workflow-bug.svg)**: intake, then triage and reproduction, then the fix.
+
+![Bug flow](./docs/agents/workflow-bug.svg)
+
+**[Review flow](./docs/agents/workflow-review.svg)**: the trigger, the two-axis review, what to do with the findings, and what to carry forward.
+
+![Review flow](./docs/agents/workflow-review.svg)
+
+The diagrams were drawn for a repo that uses these skills, so they also show that repo's conventions, which no skill here enforces. Where a diagram and a `SKILL.md` disagree, the `SKILL.md` wins:
+
+- **Intake**: the "just register it" step is a habit, not a skill. The 「新建」 section the requirement and bug diagrams cite is that repo's; here the equivalent is "Publishing to the issue tracker" in [`docs/agents/issue-tracker.md`](./docs/agents/issue-tracker.md).
+- **Merging**: rebase + fast-forward with no merge commits is that repo's rule. `implement-spec` merges as shipped.
+- **Closing**: recording the commit SHA in a comment and deleting `.scratch/<feature>/` are that repo's steps.
+
 ## Skills
 
 All 25 enabled skills, grouped the way upstream splits them ([`.agents/invocation.md`](https://github.com/mattpocock/skills/blob/main/.agents/invocation.md)): the one axis that matters is **who can reach a skill**. Every command is namespaced, so you type `/mattpocock-skills:<name>`.
@@ -146,6 +172,7 @@ dev/templates/skills/            # the 12 *.tmpl templates, mirroring the plugin
 dev/source/                      # shared injection sources, pulled into templates by path; every
                                  # shared unit gets its own subdirectory, e.g. grilling/, domain-modeling/
 scripts/generate-skills.py       # renders dev/templates/**.tmpl into the mirrored file under plugin/
+docs/agents/                     # this repo's tracker, label and domain conventions, plus the workflow diagrams
 AGENTS.md                        # repo authoring notes (author-side, never distributed)
 README.md                        # this file (author-side, never distributed)
 ```

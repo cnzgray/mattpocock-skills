@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="1000" height="1100"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.node{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:1.8}
+.side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .io{fill:#e2e8f0}
+.done{fill:#ecfdf5;stroke:#059669;stroke-width:1.4}
+.t{font:600 15px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.edge{stroke:#64748b;stroke-width:1.4;fill:none} .dash{stroke-dasharray:5 4}
+.lbl{font:500 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155} .arrow{fill:#64748b} .dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5}
+.h1{font:700 20px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a}
+@media (prefers-color-scheme: dark){
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl{fill:#94a3b8}
+ .node,.side{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .io{fill:#334155}
+ .done{fill:#052e25;stroke:#34d399} .dia{fill:#2a1608;stroke:#fb923c}
+ .t,.h1{fill:#f8fafc} .s,.lbl{fill:#cbd5e1} .edge{stroke:#94a3b8} .arrow{fill:#94a3b8}
+ .manual{fill:#2563eb}
+}</style><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1000" height="1100"/>
+<text class="h1" x="20" y="34">审查流程：触发 → 双轴审查 → 处置合入 → 沉淀</text>
+<rect class="band" x="12" y="112" width="976" height="110" rx="12"/>
+<text class="bl" x="32" y="172.0">触发</text>
+<rect class="band" x="12" y="228" width="976" height="468" rx="12"/>
+<text class="bl" x="32" y="467.0">审查</text>
+<rect class="band" x="12" y="702" width="976" height="204" rx="12"/>
+<text class="bl" x="32" y="809.0">处置</text>
+<rect class="band" x="12" y="912" width="976" height="118" rx="12"/>
+<text class="bl" x="32" y="976.0">沉淀</text>
+<rect class="io" x="220" y="52" width="360" height="46" rx="10"/>
+<text class="t" x="400.0" y="80.0" text-anchor="middle">改动就绪</text>
+<path class="edge" d="M400.0,98 V132" marker-end="url(#a)"/>
+<rect class="node" x="220" y="136" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="163">定基准点</text>
+<text class="s" x="236" y="185">git diff &lt;基准&gt;...HEAD（通常是 main）</text>
+<rect class="side" x="640" y="136" width="330" height="74" rx="10"/>
+<text class="t" x="656" y="163">何时触发</text>
+<text class="s" x="656" y="185">每张工单做完（/implement 自带）</text>
+<text class="s" x="656" y="205">rebase 上 main 前 · implement-spec 收尾</text>
+<path class="edge" d="M400.0,200 V244" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="248" width="360" height="92" rx="10"/>
+<text class="t" x="236" y="275">/code-review</text>
+<text class="s" x="236" y="297">找 spec：commit 里 #n → 参数 → .scratch 匹配分支</text>
+<text class="s" x="236" y="317">找规范：CLAUDE.md · .claude/rules/ · 坏味道基线</text>
+<rect class="auto" x="526" y="259" width="42" height="20" rx="10"/>
+<text class="bt" x="547" y="273" text-anchor="middle">自动</text>
+<path class="edge" d="M400.0,340 V384" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,360 H805.0 V384" marker-end="url(#a)"/>
+<text class="lbl" x="410.0" y="354" text-anchor="start">两个子 agent 并行，互不污染上下文</text>
+<rect class="node key" x="220" y="388" width="360" height="92" rx="10"/>
+<text class="t" x="236" y="415">Standards 子 agent</text>
+<text class="s" x="236" y="437">违反成文规范：引用文件 + 条目</text>
+<text class="s" x="236" y="457">Fowler 坏味道：仅作提示，仓库规范优先</text>
+<rect class="node key" x="640" y="388" width="330" height="92" rx="10"/>
+<text class="t" x="656" y="415">Spec 子 agent</text>
+<text class="s" x="656" y="437">缺失或部分实现 · 超范围 · 实现有误</text>
+<text class="s" x="656" y="457">找不到 spec 时跳过并注明</text>
+<path class="edge" d="M400.0,480 V512" marker-end="url(#a)"/>
+<path class="edge" d="M805.0,480 V512" marker-end="url(#a)"/>
+<rect class="node" x="220" y="516" width="750" height="64" rx="10"/>
+<text class="t" x="236" y="543">汇总：## Standards 与 ## Spec 两栏并列</text>
+<text class="s" x="236" y="565">不合并、不重排；每栏各报最严重的一项，避免一轴掩盖另一轴</text>
+<rect class="side" x="640" y="592" width="330" height="98" rx="10"/>
+<text class="t" x="656" y="619">可选加审（内置，非 Matt）</text>
+<text class="s" x="656" y="641">内置 /code-review &lt;级别&gt;：正确性 bug</text>
+<text class="s" x="656" y="661">/simplify 精简 · /security-review 安全</text>
+<text class="s" x="656" y="681">同名！Matt 的是 /mattpocock-skills:code-review</text>
+<path class="edge dash" d="M805.0,580 V588" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,580 V722" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="726" width="360" height="72" rx="10"/>
+<text class="t" x="236" y="753">逐条处置</text>
+<text class="s" x="236" y="775">该修 → 回到 /implement 或直接修，再审一轮</text>
+<text class="s" x="236" y="795">不修 → 在工单评论写明理由</text>
+<path class="edge dash" d="M220,762 H196 V294 H216" marker-end="url(#a)"/>
+<text class="lbl" x="190" y="520" text-anchor="end">修完再审</text>
+<path class="edge" d="M400.0,798 V822" marker-end="url(#a)"/>
+<rect class="done" x="220" y="826" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="853">合入 main</text>
+<text class="s" x="236" y="875">rebase + ff，禁 merge commit · 关闭工单</text>
+<rect class="side" x="640" y="826" width="330" height="64" rx="10"/>
+<text class="t" x="656" y="853">/pr（需要 PR 时）</text>
+<text class="s" x="656" y="875">Summary · Evidence · Merge Danger</text>
+<rect class="auto" x="916" y="837" width="42" height="20" rx="10"/>
+<text class="bt" x="937" y="851" text-anchor="middle">自动</text>
+<path class="edge dash" d="M580,858 H636" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,890 V932" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="936" width="360" height="76" rx="10"/>
+<text class="t" x="236" y="963">/retro</text>
+<text class="s" x="236" y="985">复发问题沉淀成：规则文件 · 自动检查 · 编码规范</text>
+<text class="s" x="236" y="1005">规范交给审查 agent 执行，实现 agent 少背规矩</text>
+<rect class="manual" x="526" y="947" width="42" height="20" rx="10"/>
+<text class="bt" x="547" y="961" text-anchor="middle">手动</text>
+<path class="edge dash" d="M580,974 H986 V294 H584" marker-end="url(#a)"/>
+<text class="lbl" x="976" y="286" text-anchor="end">回流：新规范进入 Standards 来源</text>
+<rect class="manual" x="32" y="1060" width="42" height="20" rx="10"/><text class="bt" x="53" y="1074" text-anchor="middle">手动</text>
+<text class="lbl" x="84" y="1075" text-anchor="start">只能由你输入斜杠命令</text>
+<rect class="auto" x="252" y="1060" width="42" height="20" rx="10"/><text class="bt" x="273" y="1074" text-anchor="middle">自动</text>
+<text class="lbl" x="304" y="1075" text-anchor="start">我按场景自动调用</text>
+<path class="edge dash" d="M450,1070 H500"/>
+<text class="lbl" x="510" y="1075" text-anchor="start">旁支 / 可选 / 产出物</text></svg>

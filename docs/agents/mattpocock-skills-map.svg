@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1670 1212" width="1670" height="1212"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.card{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:2}
+.t{font:600 15px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .ts{font:600 13px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.chev{fill:#dbeafe} .ct{font:700 16px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1e3a8a} .cs{font:500 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.num{fill:#1e40af} .nt{font:700 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.main{stroke:#1e40af;stroke-width:2.6;fill:none} .bug{stroke:#c2410c;stroke-width:2;fill:none;stroke-dasharray:6 4}
+.am{fill:#1e40af} .ab{fill:#c2410c} .h1{font:700 22px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .lbl{font:500 12px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.note{font:500 13px 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5} .io{fill:#e2e8f0} .edge{stroke:#64748b;stroke-width:1.6;fill:none} .dash{stroke-dasharray:5 4} .side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .reg{fill:#fff;stroke:#c2410c;stroke-width:2} .ag{fill:#64748b}
+@media (prefers-color-scheme: dark){
+ .dia{fill:#2a1608;stroke:#fb923c} .side,.reg{fill:#0b1220} .side{stroke:#475569} .reg{stroke:#fb923c} .io{fill:#334155} .edge{stroke:#94a3b8} .ag{fill:#94a3b8}
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl,.cs,.lbl,.note{fill:#cbd5e1}
+ .card{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .t,.ts,.h1{fill:#f8fafc} .s{fill:#cbd5e1}
+ .chev{fill:#1e3a8a} .ct{fill:#dbeafe} .manual,.num{fill:#2563eb} .main{stroke:#60a5fa} .am{fill:#60a5fa}
+ .bug{stroke:#fb923c} .ab{fill:#fb923c}
+}</style><defs><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="am" d="M0,0 L10,5 L0,10 z"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="ab" d="M0,0 L10,5 L0,10 z"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="ag" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1670" height="1212"/>
+<text class="h1" x="24" y="40">Matt Pocock skills 全景：按工作流程分组</text>
+<rect class="band" x="12" y="60" width="1646" height="112" rx="12"/>
+<text class="bl" x="44" y="92">开始前 · 迷路时</text>
+<rect class="card" x="360" y="88" width="290" height="64" rx="10"/>
+<text class="ts" x="376" y="114">/mattpocock-skills-setup</text>
+<text class="s" x="376" y="136">一次性配置：工单系统 · 标签 · 文档</text>
+<rect class="manual" x="598" y="99" width="42" height="20" rx="10"/><text class="bt" x="619" y="113" text-anchor="middle">手动</text>
+<rect class="card" x="690" y="88" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="114">/ask-matt</text>
+<text class="s" x="706" y="136">不知道用哪个？描述处境，它指路</text>
+<rect class="manual" x="928" y="99" width="42" height="20" rx="10"/><text class="bt" x="949" y="113" text-anchor="middle">手动</text>
+<text class="note" x="1028" y="116">首次使用先跑 setup；</text><text class="note" x="1028" y="138">拿不准下一步就问 /ask-matt</text>
+<rect class="band" x="12" y="184" width="1646" height="150" rx="12"/>
+<text class="bl" x="44" y="210">入口：先登记，不处理</text>
+<rect class="io" x="30" y="236" width="290" height="46" rx="23"/>
+<text class="t" x="175" y="264" text-anchor="middle">用户提出需求 / bug</text>
+<path class="edge" d="M320,259 H354" marker-end="url(#ag)"/>
+<rect class="reg" x="360" y="200" width="290" height="112" rx="10"/>
+<text class="t" x="376" y="226">登记（只记下，不处理）</text>
+<text class="s" x="376" y="252">方式：对我说「登记需求 / bug：&lt;原话&gt;」</text>
+<text class="s" x="376" y="274">落点：工单文件 · Status: needs-triage</text>
+<text class="s" x="376" y="296">我只回：已登记 NN，不做别的</text>
+<rect class="side" x="690" y="200" width="290" height="112" rx="10"/>
+<text class="t" x="706" y="226">登记规则</text>
+<text class="s" x="706" y="252">说不清也照记，原话不改写</text>
+<text class="s" x="706" y="274">带上日期与来源（谁、哪个客户）</text>
+<text class="s" x="706" y="296">不评估、不给方案、不开工</text>
+<path class="edge dash" d="M650,256 H686" marker-end="url(#ag)"/>
+<rect class="side" x="1020" y="200" width="620" height="112" rx="10"/>
+<text class="t" x="1036" y="226">之后再处理：/triage</text>
+<text class="s" x="1036" y="252">时机：有空时打开 /triage，一次处理一批待分诊工单（见下方「进工单系统」）</text>
+<text class="s" x="1036" y="274">说不清 → needs-info，用 /to-questionnaire 把问题发给提出人，答复回来再分诊</text>
+<text class="s" x="1036" y="296">说清了 → 按类别进下方主流程（需求 / bug）；不做 → wontfix 关闭</text>
+<rect class="manual" x="1588" y="211" width="42" height="20" rx="10"/><text class="bt" x="1609" y="225" text-anchor="middle">手动</text>
+<path class="edge dash" d="M980,256 H1016" marker-end="url(#ag)"/>
+<text class="lbl" x="515" y="327">积压在工单系统，等 /triage</text>
+<g transform="translate(0,162)">
+<rect class="band" x="12" y="184" width="1646" height="676" rx="12"/>
+<polygon class="chev" points="30,200 306,200 326,220 306,240 30,240"/>
+<text class="ct" x="46" y="226">想清楚</text>
+<text class="cs" x="34" y="258">把方案问到能写 spec</text>
+<polygon class="chev" points="360,200 636,200 656,220 636,240 360,240 376,220"/>
+<text class="ct" x="390" y="226">进工单系统</text>
+<text class="cs" x="364" y="258">登记 · 规格化 · 拆单</text>
+<polygon class="chev" points="690,200 966,200 986,220 966,240 690,240 706,220"/>
+<text class="ct" x="720" y="226">实现</text>
+<text class="cs" x="694" y="258">一次一张，测试先行</text>
+<polygon class="chev" points="1020,200 1296,200 1316,220 1296,240 1020,240 1036,220"/>
+<text class="ct" x="1050" y="226">审查交付</text>
+<text class="cs" x="1024" y="258">对规范、对 spec，再合入</text>
+<polygon class="chev" points="1350,200 1626,200 1646,220 1626,240 1350,240 1366,220"/>
+<text class="ct" x="1380" y="226">复盘沉淀</text>
+<text class="cs" x="1354" y="258">把教训变成规则</text>
+<rect class="card key" x="30" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="298">/grill-with-docs</text>
+<text class="s" x="46" y="320">逐轮追问 · 写 GLOSSARY 与 ADR</text>
+<rect class="manual" x="268" y="283" width="42" height="20" rx="10"/><text class="bt" x="289" y="297" text-anchor="middle">手动</text>
+<circle class="num" cx="32" cy="274" r="11"/><text class="nt" x="32" y="278" text-anchor="middle">1</text>
+<rect class="card" x="30" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="382">/grill-me</text>
+<text class="s" x="46" y="404">同样追问，但不落盘（无仓库时）</text>
+<rect class="manual" x="268" y="367" width="42" height="20" rx="10"/><text class="bt" x="289" y="381" text-anchor="middle">手动</text>
+<rect class="card" x="30" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="466">/wayfinder</text>
+<text class="s" x="46" y="488">超大需求：拆成决策工单逐个解决</text>
+<rect class="manual" x="268" y="451" width="42" height="20" rx="10"/><text class="bt" x="289" y="465" text-anchor="middle">手动</text>
+<rect class="card" x="30" y="524" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="550">research</text>
+<text class="s" x="46" y="572">查一手资料，结论写成 md</text>
+<rect class="auto" x="268" y="535" width="42" height="20" rx="10"/><text class="bt" x="289" y="549" text-anchor="middle">自动</text>
+<rect class="card" x="30" y="608" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="634">prototype</text>
+<text class="s" x="46" y="656">一次性原型，验证状态模型或 UI</text>
+<rect class="auto" x="268" y="619" width="42" height="20" rx="10"/><text class="bt" x="289" y="633" text-anchor="middle">自动</text>
+<rect class="card" x="30" y="692" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="718">/to-questionnaire</text>
+<text class="s" x="46" y="740">答不了的问题整理成问卷给别人填</text>
+<rect class="manual" x="268" y="703" width="42" height="20" rx="10"/><text class="bt" x="289" y="717" text-anchor="middle">手动</text>
+<rect class="card" x="360" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="298">/triage</text>
+<text class="s" x="376" y="320">外来需求 / bug：分类 · 复现 · 定去向</text>
+<rect class="manual" x="598" y="283" width="42" height="20" rx="10"/><text class="bt" x="619" y="297" text-anchor="middle">手动</text>
+<rect class="card key" x="360" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="382">/to-spec</text>
+<text class="s" x="376" y="404">把对话整理成 spec，不再追问</text>
+<rect class="manual" x="598" y="367" width="42" height="20" rx="10"/><text class="bt" x="619" y="381" text-anchor="middle">手动</text>
+<circle class="num" cx="362" cy="358" r="11"/><text class="nt" x="362" y="362" text-anchor="middle">2</text>
+<rect class="card key" x="360" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="466">/to-tickets</text>
+<text class="s" x="376" y="488">拆垂直切片 + 阻塞关系</text>
+<rect class="manual" x="598" y="451" width="42" height="20" rx="10"/><text class="bt" x="619" y="465" text-anchor="middle">手动</text>
+<circle class="num" cx="362" cy="442" r="11"/><text class="nt" x="362" y="446" text-anchor="middle">3</text>
+<rect class="card key" x="690" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="298">/implement</text>
+<text class="s" x="706" y="320">一次做一张工单，做完 commit</text>
+<rect class="manual" x="928" y="283" width="42" height="20" rx="10"/><text class="bt" x="949" y="297" text-anchor="middle">手动</text>
+<circle class="num" cx="692" cy="274" r="11"/><text class="nt" x="692" y="278" text-anchor="middle">4</text>
+<rect class="card" x="690" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="382">/implement-spec</text>
+<text class="s" x="706" y="404">整包并行：多子 agent + worktree</text>
+<rect class="manual" x="928" y="367" width="42" height="20" rx="10"/><text class="bt" x="949" y="381" text-anchor="middle">手动</text>
+<rect class="card" x="690" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="466">tdd</text>
+<text class="s" x="706" y="488">红 → 绿 → 重构，测在 seam 上</text>
+<rect class="auto" x="928" y="451" width="42" height="20" rx="10"/><text class="bt" x="949" y="465" text-anchor="middle">自动</text>
+<rect class="card" x="690" y="524" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="550">diagnosing-bugs</text>
+<text class="s" x="706" y="572">难缠 bug：先建能变红的反馈循环</text>
+<rect class="auto" x="928" y="535" width="42" height="20" rx="10"/><text class="bt" x="949" y="549" text-anchor="middle">自动</text>
+<rect class="card" x="690" y="608" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="634">codebase-design</text>
+<text class="s" x="706" y="656">深模块词汇：接口 · seam · 可测性</text>
+<rect class="auto" x="928" y="619" width="42" height="20" rx="10"/><text class="bt" x="949" y="633" text-anchor="middle">自动</text>
+<rect class="card" x="690" y="692" width="290" height="64" rx="10"/>
+<text class="ts" x="706" y="718">/improve-codebase-architecture</text>
+<text class="s" x="706" y="740">架构体检：找加深点，出 HTML 报告</text>
+<rect class="manual" x="928" y="703" width="42" height="20" rx="10"/><text class="bt" x="949" y="717" text-anchor="middle">手动</text>
+<rect class="card" x="690" y="776" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="802">wizard</text>
+<text class="s" x="706" y="824">只有人能做的步骤 → 交互式脚本</text>
+<rect class="auto" x="928" y="787" width="42" height="20" rx="10"/><text class="bt" x="949" y="801" text-anchor="middle">自动</text>
+<rect class="card key" x="1020" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="298">code-review</text>
+<text class="s" x="1036" y="320">双轴并行：Standards + Spec</text>
+<rect class="auto" x="1258" y="283" width="42" height="20" rx="10"/><text class="bt" x="1279" y="297" text-anchor="middle">自动</text>
+<circle class="num" cx="1022" cy="274" r="11"/><text class="nt" x="1022" y="278" text-anchor="middle">5</text>
+<rect class="card" x="1020" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="382">pr</text>
+<text class="s" x="1036" y="404">写 PR 正文：摘要 · 证据 · 合入风险</text>
+<rect class="auto" x="1258" y="367" width="42" height="20" rx="10"/><text class="bt" x="1279" y="381" text-anchor="middle">自动</text>
+<rect class="card key" x="1350" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="1366" y="298">/retro</text>
+<text class="s" x="1366" y="320">复盘会话，改进规则 / 检查 / 工具</text>
+<rect class="manual" x="1588" y="283" width="42" height="20" rx="10"/><text class="bt" x="1609" y="297" text-anchor="middle">手动</text>
+<circle class="num" cx="1352" cy="274" r="11"/><text class="nt" x="1352" y="278" text-anchor="middle">6</text>
+<rect class="card" x="1350" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="1366" y="382">writing-for-agents</text>
+<text class="s" x="1366" y="404">写 skill、CLAUDE.md 时的文风规范</text>
+<rect class="auto" x="1588" y="367" width="42" height="20" rx="10"/><text class="bt" x="1609" y="381" text-anchor="middle">自动</text>
+<path class="main" d="M320,304 H340 V388 H356" marker-end="url(#am)"/>
+<path class="main" d="M505.0,420 V437" marker-end="url(#am)"/>
+<path class="main" d="M650,472 H670 V316 H686" marker-end="url(#am)"/>
+<path class="main" d="M980,304 H1016" marker-end="url(#am)"/>
+<path class="main" d="M1310,304 H1346" marker-end="url(#am)"/>
+<path class="bug" d="M650,292 H686" marker-end="url(#ab)"/>
+<rect class="band" x="12" y="872" width="1646" height="100" rx="12"/>
+<text class="bl" x="44" y="927.0">随时可用</text>
+<rect class="card" x="360" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="916">/handoff</text>
+<text class="s" x="376" y="938">会话太长：压成交接文档给下个 agent</text>
+<rect class="manual" x="598" y="901" width="42" height="20" rx="10"/><text class="bt" x="619" y="915" text-anchor="middle">手动</text>
+<rect class="card" x="690" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="916">/wait-what</text>
+<text class="s" x="706" y="938">上一条没看懂：让它换个说法重讲</text>
+<rect class="manual" x="928" y="901" width="42" height="20" rx="10"/><text class="bt" x="949" y="915" text-anchor="middle">手动</text>
+<rect class="card" x="1020" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="916">/teach</text>
+<text class="s" x="1036" y="938">在当前工作区里教你一个新概念</text>
+<rect class="manual" x="1258" y="901" width="42" height="20" rx="10"/><text class="bt" x="1279" y="915" text-anchor="middle">手动</text>
+<rect class="manual" x="32" y="1004" width="42" height="20" rx="10"/><text class="bt" x="53" y="1018" text-anchor="middle">手动</text>
+<text class="lbl" x="84" y="1019">只能由你输入斜杠命令</text>
+<rect class="auto" x="252" y="1004" width="42" height="20" rx="10"/><text class="bt" x="273" y="1018" text-anchor="middle">自动</text>
+<text class="lbl" x="304" y="1019">按场景自动调用，也可手动</text>
+<path class="main" d="M500,1014 H550" marker-end="url(#am)"/><circle class="num" cx="572" cy="1014" r="10"/><text class="nt" x="572" y="1018" text-anchor="middle">1</text>
+<text class="lbl" x="590" y="1019">主干路径 ①→⑥：需求从想清楚到复盘</text>
+<path class="bug" d="M860,1014 H910" marker-end="url(#ab)"/>
+<text class="lbl" x="920" y="1019">bug 捷径：分诊复现后跳过 spec，直接 /implement</text></g>
+<path class="edge" d="M505,312 V430" marker-end="url(#ag)"/></svg>
