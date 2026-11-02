@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.node{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:1.8}
+.side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .io{fill:#e2e8f0}
+.done{fill:#ecfdf5;stroke:#059669;stroke-width:1.4}
+.t{font:600 15px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.edge{stroke:#64748b;stroke-width:1.4;fill:none} .dash{stroke-dasharray:5 4}
+.lbl{font:500 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155} .arrow{fill:#64748b} .dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5}
+.h1{font:700 20px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a}
+@media (prefers-color-scheme: dark){
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl{fill:#94a3b8}
+ .node,.side{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .io{fill:#334155}
+ .done{fill:#052e25;stroke:#34d399} .dia{fill:#2a1608;stroke:#fb923c}
+ .t,.h1{fill:#f8fafc} .s,.lbl{fill:#cbd5e1} .edge{stroke:#94a3b8} .arrow{fill:#94a3b8}
+ .manual{fill:#2563eb}
+}</style><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1000" height="1000"/>
+<text class="h1" x="20" y="34">Bug flow: file → triage &amp; reproduce → fix</text>
+<rect class="band" x="12" y="112" width="976" height="134" rx="12"/>
+<text class="bl" x="32" y="184.0">File</text>
+<rect class="band" x="12" y="252" width="976" height="450" rx="12"/>
+<text class="bl" x="32" y="482.0">Analyse</text>
+<rect class="band" x="12" y="708" width="976" height="216" rx="12"/>
+<text class="bl" x="32" y="821.0">Fix</text>
+<rect class="io" x="220" y="52" width="360" height="46" rx="10"/>
+<text class="t" x="400.0" y="80.0" text-anchor="middle">Bug report (client / field / your own)</text>
+<path class="edge" d="M400.0,98 V132" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="136" width="360" height="104" rx="10"/>
+<text class="t" x="236" y="163">File it in the tracker</text>
+<text class="s" x="236" y="185">Say “file a bug”, or write the file</text>
+<text class="s" x="236" y="205">File: .scratch/&lt;feature&gt;/issues/NN-&lt;slug&gt;.md</text>
+<text class="s" x="236" y="225">Content: symptoms · repro · device/version · Category: bug</text>
+<rect class="side" x="640" y="136" width="330" height="104" rx="10"/>
+<text class="t" x="656" y="163">No dedicated skill</text>
+<text class="s" x="656" y="185">Follow “New” in docs/agents/issue-tracker.md</text>
+<text class="s" x="656" y="205">Initial Status: needs-triage</text>
+<text class="s" x="656" y="225">Tickets from /to-tickets skip filing and triage</text>
+<path class="edge dash" d="M580,188 H636" marker-end="url(#a)"/>
+<g transform="translate(0,40)">
+<path class="edge" d="M400.0,200 V256" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="260" width="360" height="76" rx="10"/>
+<text class="t" x="236" y="287">/triage</text>
+<text class="s" x="236" y="309">Reproduce first, then discuss (Verify the claim)</text>
+<rect class="manual" x="514" y="271" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="285" text-anchor="middle">manual</text>
+<rect class="side" x="640" y="222" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="249">Can't reproduce → needs-info</text>
+<text class="s" x="656" y="271">/to-questionnaire: logs, screen recording, env</text>
+<path class="edge dash" d="M580,298 H610 V249 H636" marker-end="url(#a)"/>
+<rect class="side" x="640" y="284" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="311">Not a bug → wontfix</text>
+<text class="s" x="656" y="333">Expected behaviour or fixed; explain, close</text>
+<path class="edge dash" d="M580,298 H610 V311 H636" marker-end="url(#a)"/>
+<rect class="side" x="640" y="346" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="373">Design gap → reclassify enhancement</text>
+<text class="s" x="656" y="395">Move to the requirement flow</text>
+<path class="edge dash" d="M580,298 H610 V373 H636" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,336 V418" marker-end="url(#a)"/>
+<text class="lbl" x="410.0" y="384" text-anchor="start">reproduced</text>
+<polygon class="dia" points="290.0,470 400.0,422 510.0,470 400.0,518"/>
+<text class="t" x="400.0" y="476" text-anchor="middle">Hard?</text>
+<path class="edge" d="M510.0,470 H636" marker-end="url(#a)"/>
+<text class="lbl" x="526.0" y="462" text-anchor="start">yes</text>
+<path class="edge" d="M400.0,518 V566" marker-end="url(#a)"/>
+<text class="lbl" x="410.0" y="548" text-anchor="start">no</text>
+<rect class="node" x="220" y="570" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="597">/triage writes an agent brief</text>
+<text class="s" x="236" y="619">A small spec · ready-for-agent</text>
+<rect class="manual" x="514" y="581" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="595" text-anchor="middle">manual</text>
+<rect class="node key" x="640" y="420" width="330" height="236" rx="10"/>
+<text class="t" x="656" y="447">diagnosing-bugs</text>
+<text class="s" x="656" y="469">Flaky / perf regression / unknown cause</text>
+<rect class="auto" x="904" y="431" width="54" height="20" rx="12"/>
+<text class="bt" x="931" y="445" text-anchor="middle">auto</text>
+<text class="s" x="656" y="502">① Build a loop: one command goes red</text>
+<text class="s" x="656" y="527">② Reproduce + minimise</text>
+<text class="s" x="656" y="552">③ List hypotheses; disprove them</text>
+<text class="s" x="656" y="577">④ Instrument and observe</text>
+<text class="s" x="656" y="602">⑤ Regression test first, then fix</text>
+<text class="s" x="656" y="627">⑥ Remove the probes and scripts</text>
+<path class="edge" d="M400.0,634 V676" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="680" width="360" height="78" rx="10"/>
+<text class="t" x="236" y="707">/implement &lt;ticket&gt;</text>
+<text class="s" x="236" y="729">Fix to the brief · tdd the test first</text>
+<text class="s" x="236" y="749">code-review → commit</text>
+<rect class="manual" x="514" y="691" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="705" text-anchor="middle">manual</text>
+<path class="edge" d="M805.0,656 V696" marker-end="url(#a)"/>
+<rect class="node" x="640" y="700" width="330" height="58" rx="10"/>
+<text class="t" x="656" y="727">code-review → commit</text>
+<text class="s" x="656" y="749">Review the fix and its regression test</text>
+<rect class="auto" x="904" y="711" width="54" height="20" rx="12"/>
+<text class="bt" x="931" y="725" text-anchor="middle">auto</text>
+<path class="edge" d="M400.0,758 V806" marker-end="url(#a)"/>
+<path class="edge" d="M805.0,758 V806" marker-end="url(#a)"/>
+<rect class="done" x="220" y="810" width="750" height="52" rx="10"/>
+<text class="t" x="595.0" y="841.0" text-anchor="middle">Done: close the ticket (comment with the commit SHA)</text>
+</g>
+<rect class="manual" x="20" y="950" width="54" height="20" rx="12"/><text class="bt" x="47" y="964" text-anchor="middle">manual</text>
+<text class="lbl" x="84" y="965" text-anchor="start">Type the slash command</text>
+<rect class="auto" x="240" y="950" width="54" height="20" rx="12"/><text class="bt" x="267" y="964" text-anchor="middle">auto</text>
+<text class="lbl" x="304" y="965" text-anchor="start">Auto-invoked when it fits</text>
+<path class="edge dash" d="M450,960 H500"/>
+<text class="lbl" x="510" y="965" text-anchor="start">Side branch / optional / output</text></svg>

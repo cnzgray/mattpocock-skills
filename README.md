@@ -1,5 +1,7 @@
 # mattpocock-skills for Claude Code
 
+**English** · [简体中文](./README.zh-CN.md)
+
 [Matt Pocock's agent skills](https://github.com/mattpocock/skills), the "Skills for Real Engineers" set, packaged as a **native Claude Code plugin**.
 
 This repo is an unofficial personal fork of that project, narrowed to the working set of skills I actually use: 25 skills are enabled, whitelisted in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) — 19 engineering plus 6 productivity. On Claude Code they install as namespaced slash commands, `/mattpocock-skills:<name>`; other agents take the same files as bare skill IDs (see [Install](#install)).
@@ -85,23 +87,25 @@ Off the flow but always available:
 
 ### Diagrams
 
-Four diagrams of how these skills fit together in day-to-day use, labelled in Simplified Chinese. They use bare skill names, so read `/triage` as `/mattpocock-skills:triage` on Claude Code.
+Four diagrams of how these skills fit together in day-to-day use, labelled in English. They use bare skill names, so read `/triage` as `/mattpocock-skills:triage` on Claude Code.
 
-**[Skills map](./docs/agents/mattpocock-skills-map.svg)**: all 25 skills grouped by stage, from intake to retro.
+Each diagram also has a Simplified Chinese edition: the same filename without the `.en` suffix, used by [`README.zh-CN.md`](./README.zh-CN.md).
 
-![Skills map](./docs/agents/mattpocock-skills-map.svg)
+**[Skills map](./docs/agents/mattpocock-skills-map.en.svg)**: all 25 skills grouped by stage, from intake to retro.
 
-**[Requirement flow](./docs/agents/workflow-requirement.svg)**: intake, then a spec, then tickets.
+![Skills map](./docs/agents/mattpocock-skills-map.en.svg)
 
-![Requirement flow](./docs/agents/workflow-requirement.svg)
+**[Requirement flow](./docs/agents/workflow-requirement.en.svg)**: intake, then a spec, then tickets.
 
-**[Bug flow](./docs/agents/workflow-bug.svg)**: intake, then triage and reproduction, then the fix.
+![Requirement flow](./docs/agents/workflow-requirement.en.svg)
 
-![Bug flow](./docs/agents/workflow-bug.svg)
+**[Bug flow](./docs/agents/workflow-bug.en.svg)**: intake, then triage and reproduction, then the fix.
 
-**[Review flow](./docs/agents/workflow-review.svg)**: the trigger, the two-axis review, what to do with the findings, and what to carry forward.
+![Bug flow](./docs/agents/workflow-bug.en.svg)
 
-![Review flow](./docs/agents/workflow-review.svg)
+**[Review flow](./docs/agents/workflow-review.en.svg)**: the trigger, the two-axis review, what to do with the findings, and what to carry forward.
+
+![Review flow](./docs/agents/workflow-review.en.svg)
 
 The diagrams were drawn for a repo that uses these skills, so they also show that repo's conventions, which no skill here enforces. Where a diagram and a `SKILL.md` disagree, the `SKILL.md` wins:
 
@@ -172,12 +176,13 @@ dev/templates/skills/            # the 12 *.tmpl templates, mirroring the plugin
 dev/source/                      # shared injection sources, pulled into templates by path; every
                                  # shared unit gets its own subdirectory, e.g. grilling/, domain-modeling/
 scripts/generate-skills.py       # renders dev/templates/**.tmpl into the mirrored file under plugin/
-docs/agents/                     # this repo's tracker, label and domain conventions, plus the workflow diagrams
+docs/agents/                     # tracker, label and domain conventions, plus the workflow diagrams (en + zh)
 AGENTS.md                        # repo authoring notes (author-side, never distributed)
 README.md                        # this file (author-side, never distributed)
+README.zh-CN.md                  # Chinese translation of this file (author-side, never distributed)
 ```
 
-Only `plugin/` is the plugin root. Everything else at the repo root — `dev/`, `scripts/`, `docs/`, `AGENTS.md`, `README.md` — stays outside it, so Claude Code's recursive copy of the plugin root never picks it up.
+Only `plugin/` is the plugin root. Everything else at the repo root — `dev/`, `scripts/`, `docs/`, `AGENTS.md`, `README.md`, `README.zh-CN.md` — stays outside it, so Claude Code's recursive copy of the plugin root never picks it up.
 
 ## Maintaining the generated skills
 

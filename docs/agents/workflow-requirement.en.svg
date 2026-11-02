@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1160" width="1000" height="1160"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.node{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:1.8}
+.side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .io{fill:#e2e8f0}
+.done{fill:#ecfdf5;stroke:#059669;stroke-width:1.4}
+.t{font:600 15px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.edge{stroke:#64748b;stroke-width:1.4;fill:none} .dash{stroke-dasharray:5 4}
+.lbl{font:500 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155} .arrow{fill:#64748b} .dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5}
+.h1{font:700 20px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a}
+@media (prefers-color-scheme: dark){
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl{fill:#94a3b8}
+ .node,.side{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .io{fill:#334155}
+ .done{fill:#052e25;stroke:#34d399} .dia{fill:#2a1608;stroke:#fb923c}
+ .t,.h1{fill:#f8fafc} .s,.lbl{fill:#cbd5e1} .edge{stroke:#94a3b8} .arrow{fill:#94a3b8}
+ .manual{fill:#2563eb}
+}</style><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1000" height="1160"/>
+<text class="h1" x="20" y="34">Requirement flow: file → analyse (spec) → implement (tickets)</text>
+<rect class="band" x="12" y="112" width="976" height="134" rx="12"/>
+<text class="bl" x="32" y="184.0">File</text>
+<rect class="band" x="12" y="252" width="976" height="490" rx="12"/>
+<text class="bl" x="32" y="502.0">Analyse</text>
+<rect class="band" x="12" y="748" width="976" height="340" rx="12"/>
+<text class="bl" x="32" y="923.0">Implement</text>
+<rect class="io" x="220" y="52" width="360" height="46" rx="10"/>
+<text class="t" x="400.0" y="80.0" text-anchor="middle">Client feedback / their words</text>
+<path class="edge" d="M400.0,98 V132" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="136" width="360" height="104" rx="10"/>
+<text class="t" x="236" y="163">File it in the tracker</text>
+<text class="s" x="236" y="185">Say “file a request”, or write the file</text>
+<text class="s" x="236" y="205">File: .scratch/&lt;feature&gt;/issues/NN-&lt;slug&gt;.md</text>
+<text class="s" x="236" y="225">Content: their words · date · source · Category: enhancement</text>
+<rect class="side" x="640" y="136" width="330" height="104" rx="10"/>
+<text class="t" x="656" y="163">No dedicated skill</text>
+<text class="s" x="656" y="185">Follow “New” in docs/agents/issue-tracker.md</text>
+<text class="s" x="656" y="205">Initial Status: needs-triage</text>
+<text class="s" x="656" y="225">Tickets from /to-tickets skip filing and triage</text>
+<path class="edge dash" d="M580,188 H636" marker-end="url(#a)"/>
+<g transform="translate(0,40)">
+<path class="edge" d="M400.0,200 V256" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="260" width="360" height="76" rx="10"/>
+<text class="t" x="236" y="287">/triage</text>
+<text class="s" x="236" y="309">Classify · check if shipped · decide</text>
+<rect class="manual" x="514" y="271" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="285" text-anchor="middle">manual</text>
+<rect class="side" x="640" y="218" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="245">Already shipped → wontfix</text>
+<text class="s" x="656" y="267">Point to the code, close</text>
+<path class="edge dash" d="M580,298 H610 V245 H636" marker-end="url(#a)"/>
+<rect class="side" x="640" y="280" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="307">Rejected → wontfix</text>
+<text class="s" x="656" y="329">Reason recorded in .out-of-scope/</text>
+<path class="edge dash" d="M580,298 H610 V307 H636" marker-end="url(#a)"/>
+<rect class="side" x="640" y="342" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="369">Too vague → needs-info</text>
+<text class="s" x="656" y="391">/to-questionnaire the client; re-triage on reply</text>
+<path class="edge dash" d="M580,298 H610 V369 H636" marker-end="url(#a)"/>
+<rect class="side" x="640" y="404" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="431">Too big</text>
+<text class="s" x="656" y="453">/wayfinder: split into decision tickets</text>
+<path class="edge dash" d="M580,298 H610 V431 H636" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,336 V496" marker-end="url(#a)"/>
+<text class="lbl" x="410.0" y="420" text-anchor="start">needs work</text>
+<rect class="node key" x="220" y="500" width="360" height="72" rx="10"/>
+<text class="t" x="236" y="527">/grill-with-docs</text>
+<text class="s" x="236" y="549">Grill until the plan is clear</text>
+<rect class="manual" x="514" y="511" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="525" text-anchor="middle">manual</text>
+<rect class="side" x="640" y="478" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="505">GLOSSARY.md · docs/adr/</text>
+<text class="s" x="656" y="527">Terms and decisions written down</text>
+<rect class="side" x="640" y="542" width="330" height="54" rx="10"/>
+<text class="t" x="656" y="569">prototype · research</text>
+<text class="s" x="656" y="591">Throwaway probe / primary sources</text>
+<rect class="auto" x="904" y="553" width="54" height="20" rx="12"/>
+<text class="bt" x="931" y="567" text-anchor="middle">auto</text>
+<path class="edge dash" d="M580,536 H610 V505 H636" marker-end="url(#a)"/>
+<path class="edge dash" d="M580,536 H610 V569 H636" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,572 V616" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="620" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="647">/to-spec</text>
+<text class="s" x="236" y="669">Write the spec · tag ready-for-agent</text>
+<rect class="manual" x="514" y="631" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="645" text-anchor="middle">manual</text>
+<path class="edge" d="M400.0,684 V720" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="724" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="751">/to-tickets</text>
+<text class="s" x="236" y="773">Slices + blockers · publish on your OK</text>
+<rect class="manual" x="514" y="735" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="749" text-anchor="middle">manual</text>
+<path class="edge" d="M400.0,788 V832" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="836" width="360" height="92" rx="10"/>
+<text class="t" x="236" y="863">/implement &lt;ticket&gt;</text>
+<text class="s" x="236" y="885">tdd → self code-review → commit</text>
+<text class="s" x="236" y="905">After each: /clear, then the next ready one</text>
+<rect class="manual" x="514" y="847" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="861" text-anchor="middle">manual</text>
+<rect class="side" x="640" y="836" width="330" height="92" rx="10"/>
+<text class="t" x="656" y="863">/implement-spec</text>
+<text class="s" x="656" y="885">Parallel: subagents + worktrees</text>
+<text class="s" x="656" y="905">Requires rebase + ff, no merge commits</text>
+<rect class="manual" x="904" y="847" width="54" height="20" rx="12"/>
+<text class="bt" x="931" y="861" text-anchor="middle">manual</text>
+<path class="edge dash" d="M580,756 H610 V882 H636" marker-end="url(#a)"/>
+<text class="lbl" x="616" y="820" text-anchor="start">or</text>
+<path class="edge" d="M400.0,928 V976" marker-end="url(#a)"/>
+<rect class="done" x="220" y="980" width="750" height="52" rx="10"/>
+<text class="t" x="595.0" y="1011.0" text-anchor="middle">Done: close the ticket · delete .scratch/&lt;feature&gt;/ (history stays in git)</text>
+</g>
+<rect class="manual" x="20" y="1114" width="54" height="20" rx="12"/><text class="bt" x="47" y="1128" text-anchor="middle">manual</text>
+<text class="lbl" x="84" y="1129" text-anchor="start">Type the slash command</text>
+<rect class="auto" x="240" y="1114" width="54" height="20" rx="12"/><text class="bt" x="267" y="1128" text-anchor="middle">auto</text>
+<text class="lbl" x="304" y="1129" text-anchor="start">Auto-invoked when it fits</text>
+<path class="edge dash" d="M450,1124 H500"/>
+<text class="lbl" x="510" y="1129" text-anchor="start">Side branch / optional / output</text></svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="1000" height="1100"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.node{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:1.8}
+.side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .io{fill:#e2e8f0}
+.done{fill:#ecfdf5;stroke:#059669;stroke-width:1.4}
+.t{font:600 15px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.edge{stroke:#64748b;stroke-width:1.4;fill:none} .dash{stroke-dasharray:5 4}
+.lbl{font:500 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155} .arrow{fill:#64748b} .dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5}
+.h1{font:700 20px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a}
+@media (prefers-color-scheme: dark){
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl{fill:#94a3b8}
+ .node,.side{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .io{fill:#334155}
+ .done{fill:#052e25;stroke:#34d399} .dia{fill:#2a1608;stroke:#fb923c}
+ .t,.h1{fill:#f8fafc} .s,.lbl{fill:#cbd5e1} .edge{stroke:#94a3b8} .arrow{fill:#94a3b8}
+ .manual{fill:#2563eb}
+}</style><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1000" height="1100"/>
+<text class="h1" x="20" y="34">Review flow: trigger → two-axis review → act &amp; merge → feed back</text>
+<rect class="band" x="12" y="112" width="976" height="110" rx="12"/>
+<text class="bl" x="32" y="172.0">Trigger</text>
+<rect class="band" x="12" y="228" width="976" height="468" rx="12"/>
+<text class="bl" x="32" y="467.0">Review</text>
+<rect class="band" x="12" y="702" width="976" height="204" rx="12"/>
+<text class="bl" x="32" y="809.0">Act</text>
+<rect class="band" x="12" y="912" width="976" height="118" rx="12"/>
+<text class="bl" x="32" y="976.0">Feed back</text>
+<rect class="io" x="220" y="52" width="360" height="46" rx="10"/>
+<text class="t" x="400.0" y="80.0" text-anchor="middle">Change is ready</text>
+<path class="edge" d="M400.0,98 V132" marker-end="url(#a)"/>
+<rect class="node" x="220" y="136" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="163">Pick the base</text>
+<text class="s" x="236" y="185">git diff &lt;base&gt;...HEAD (usually main)</text>
+<rect class="side" x="640" y="136" width="330" height="74" rx="10"/>
+<text class="t" x="656" y="163">When it fires</text>
+<text class="s" x="656" y="185">After every ticket (/implement does it)</text>
+<text class="s" x="656" y="205">Before rebasing on main · implement-spec wrap-up</text>
+<path class="edge" d="M400.0,200 V244" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="248" width="360" height="92" rx="10"/>
+<text class="t" x="236" y="275">/code-review</text>
+<text class="s" x="236" y="297">Find spec: #n in commit → arg → .scratch branch</text>
+<text class="s" x="236" y="317">Find standards: CLAUDE.md · .claude/rules/ · smells</text>
+<rect class="auto" x="514" y="259" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="273" text-anchor="middle">auto</text>
+<path class="edge" d="M400.0,340 V384" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,360 H805.0 V384" marker-end="url(#a)"/>
+<text class="lbl" x="410.0" y="354" text-anchor="start">Two sub-agents in parallel, separate contexts</text>
+<rect class="node key" x="220" y="388" width="360" height="92" rx="10"/>
+<text class="t" x="236" y="415">Standards sub-agent</text>
+<text class="s" x="236" y="437">Written-standard breach: cite file + rule</text>
+<text class="s" x="236" y="457">Fowler smells: hints only, repo rules win</text>
+<rect class="node key" x="640" y="388" width="330" height="92" rx="10"/>
+<text class="t" x="656" y="415">Spec sub-agent</text>
+<text class="s" x="656" y="437">Missing or partial · overreach · wrong</text>
+<text class="s" x="656" y="457">No spec found: skip it and say so</text>
+<path class="edge" d="M400.0,480 V512" marker-end="url(#a)"/>
+<path class="edge" d="M805.0,480 V512" marker-end="url(#a)"/>
+<rect class="node" x="220" y="516" width="750" height="64" rx="10"/>
+<text class="t" x="236" y="543">Report: ## Standards and ## Spec side by side</text>
+<text class="s" x="236" y="565">Never merge or reorder; each column reports its worst item, so neither hides the other</text>
+<rect class="side" x="640" y="592" width="330" height="98" rx="10"/>
+<text class="t" x="656" y="619">Optional extras (built-in, not Matt's)</text>
+<text class="s" x="656" y="641">Built-in /code-review &lt;level&gt;: correctness bugs</text>
+<text class="s" x="656" y="661">/simplify (trim) · /security-review (audit)</text>
+<text class="s" x="656" y="681">Same name! Matt's: /mattpocock-skills:code-review</text>
+<path class="edge dash" d="M805.0,580 V588" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,580 V722" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="726" width="360" height="72" rx="10"/>
+<text class="t" x="236" y="753">Act on each finding</text>
+<text class="s" x="236" y="775">Fix → /implement or fix directly, re-review</text>
+<text class="s" x="236" y="795">Won't fix → say why on the ticket</text>
+<path class="edge dash" d="M220,762 H196 V294 H216" marker-end="url(#a)"/>
+<text class="lbl" x="190" y="520" text-anchor="end">re-review</text>
+<path class="edge" d="M400.0,798 V822" marker-end="url(#a)"/>
+<rect class="done" x="220" y="826" width="360" height="64" rx="10"/>
+<text class="t" x="236" y="853">Merge to main</text>
+<text class="s" x="236" y="875">rebase + ff, no merge commits · close ticket</text>
+<rect class="side" x="640" y="826" width="330" height="64" rx="10"/>
+<text class="t" x="656" y="853">/pr (when a PR is needed)</text>
+<text class="s" x="656" y="875">Summary · Evidence · Merge Danger</text>
+<rect class="auto" x="904" y="837" width="54" height="20" rx="12"/>
+<text class="bt" x="931" y="851" text-anchor="middle">auto</text>
+<path class="edge dash" d="M580,858 H636" marker-end="url(#a)"/>
+<path class="edge" d="M400.0,890 V932" marker-end="url(#a)"/>
+<rect class="node key" x="220" y="936" width="360" height="76" rx="10"/>
+<text class="t" x="236" y="963">/retro</text>
+<text class="s" x="236" y="985">Recurring issues → rules · checks · standards</text>
+<text class="s" x="236" y="1005">Reviewers carry the rules; implementers stay light</text>
+<rect class="manual" x="514" y="947" width="54" height="20" rx="12"/>
+<text class="bt" x="541" y="961" text-anchor="middle">manual</text>
+<path class="edge dash" d="M580,974 H986 V294 H584" marker-end="url(#a)"/>
+<text class="lbl" x="976" y="286" text-anchor="end">Feedback: new rules feed the Standards source</text>
+<rect class="manual" x="20" y="1060" width="54" height="20" rx="12"/><text class="bt" x="47" y="1074" text-anchor="middle">manual</text>
+<text class="lbl" x="84" y="1075" text-anchor="start">Type the slash command</text>
+<rect class="auto" x="240" y="1060" width="54" height="20" rx="12"/><text class="bt" x="267" y="1074" text-anchor="middle">auto</text>
+<text class="lbl" x="304" y="1075" text-anchor="start">Auto-invoked when it fits</text>
+<path class="edge dash" d="M450,1070 H500"/>
+<text class="lbl" x="510" y="1075" text-anchor="start">Side branch / optional / output</text></svg>

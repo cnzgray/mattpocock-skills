@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1670 1212" width="1670" height="1212"><style>
+.bg{fill:#f8fafc} .band{fill:#eef2f7} .bl{font:600 14px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.card{fill:#fff;stroke:#cbd5e1;stroke-width:1.2} .key{stroke:#1e40af;stroke-width:2}
+.t{font:600 15px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .ts{font:600 13px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .s{font:400 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#475569}
+.manual{fill:#1e40af} .auto{fill:#059669} .bt{font:600 11px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.chev{fill:#dbeafe} .ct{font:700 16px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1e3a8a} .cs{font:500 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.num{fill:#1e40af} .nt{font:700 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#fff}
+.main{stroke:#1e40af;stroke-width:2.6;fill:none} .bug{stroke:#c2410c;stroke-width:2;fill:none;stroke-dasharray:6 4}
+.am{fill:#1e40af} .ab{fill:#c2410c} .h1{font:700 22px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a} .lbl{font:500 12px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.note{font:500 13px 'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#334155}
+.dia{fill:#fff7ed;stroke:#c2410c;stroke-width:1.5} .io{fill:#e2e8f0} .edge{stroke:#64748b;stroke-width:1.6;fill:none} .dash{stroke-dasharray:5 4} .side{fill:#fff;stroke:#94a3b8;stroke-width:1.1;stroke-dasharray:5 4} .reg{fill:#fff;stroke:#c2410c;stroke-width:2} .ag{fill:#64748b}
+@media (prefers-color-scheme: dark){
+ .dia{fill:#2a1608;stroke:#fb923c} .side,.reg{fill:#0b1220} .side{stroke:#475569} .reg{stroke:#fb923c} .io{fill:#334155} .edge{stroke:#94a3b8} .ag{fill:#94a3b8}
+ .bg{fill:#0f172a} .band{fill:#1e293b} .bl,.cs,.lbl,.note{fill:#cbd5e1}
+ .card{fill:#0b1220;stroke:#475569} .key{stroke:#60a5fa} .t,.ts,.h1{fill:#f8fafc} .s{fill:#cbd5e1}
+ .chev{fill:#1e3a8a} .ct{fill:#dbeafe} .manual,.num{fill:#2563eb} .main{stroke:#60a5fa} .am{fill:#60a5fa}
+ .bug{stroke:#fb923c} .ab{fill:#fb923c}
+}</style><defs><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="am" d="M0,0 L10,5 L0,10 z"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="ab" d="M0,0 L10,5 L0,10 z"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path class="ag" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="bg" width="1670" height="1212"/>
+<text class="h1" x="24" y="40">Matt Pocock skills at a glance: grouped by workflow</text>
+<rect class="band" x="12" y="60" width="1646" height="112" rx="12"/>
+<text class="bl" x="44" y="92">Before you start · when lost</text>
+<rect class="card" x="360" y="88" width="290" height="64" rx="10"/>
+<text class="ts" x="376" y="114">/mattpocock-skills-setup</text>
+<text class="s" x="376" y="136">One-time setup: tracker, labels, docs</text>
+<rect class="manual" x="586" y="99" width="54" height="20" rx="12"/><text class="bt" x="613" y="113" text-anchor="middle">manual</text>
+<rect class="card" x="690" y="88" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="114">/ask-matt</text>
+<text class="s" x="706" y="136">Unsure which? Describe the situation</text>
+<rect class="manual" x="916" y="99" width="54" height="20" rx="12"/><text class="bt" x="943" y="113" text-anchor="middle">manual</text>
+<text class="note" x="1028" y="116">Run setup on first use;</text><text class="note" x="1028" y="138">Unsure of the next step? Ask /ask-matt</text>
+<rect class="band" x="12" y="184" width="1646" height="150" rx="12"/>
+<text class="bl" x="44" y="210">Intake: file it, don't act</text>
+<rect class="io" x="30" y="236" width="290" height="46" rx="23"/>
+<text class="t" x="175" y="264" text-anchor="middle">User brings a request / bug</text>
+<path class="edge" d="M320,259 H354" marker-end="url(#ag)"/>
+<rect class="reg" x="360" y="200" width="290" height="112" rx="10"/>
+<text class="t" x="376" y="226">File it (record only, no action)</text>
+<text class="s" x="376" y="252">Say: “file a request / bug: &lt;their words&gt;”</text>
+<text class="s" x="376" y="274">Lands in: issue file · Status: needs-triage</text>
+<text class="s" x="376" y="296">I reply: filed NN, nothing else</text>
+<rect class="side" x="690" y="200" width="290" height="112" rx="10"/>
+<text class="t" x="706" y="226">Filing rules</text>
+<text class="s" x="706" y="252">File it even if vague; no rewording</text>
+<text class="s" x="706" y="274">Date + source (who, which client)</text>
+<text class="s" x="706" y="296">No estimate, no plan, no work</text>
+<path class="edge dash" d="M650,256 H686" marker-end="url(#ag)"/>
+<rect class="side" x="1020" y="200" width="620" height="112" rx="10"/>
+<text class="t" x="1036" y="226">Later: /triage</text>
+<text class="s" x="1036" y="252">When: open /triage with time to spare; work a batch of untriaged issues (see below)</text>
+<text class="s" x="1036" y="274">Unclear → needs-info: send /to-questionnaire to the reporter, triage on reply</text>
+<text class="s" x="1036" y="296">Clear → follow the request / bug flow below; won't do → close as wontfix</text>
+<rect class="manual" x="1576" y="211" width="54" height="20" rx="12"/><text class="bt" x="1603" y="225" text-anchor="middle">manual</text>
+<path class="edge dash" d="M980,256 H1016" marker-end="url(#ag)"/>
+<text class="lbl" x="515" y="327">Backlog waits in the tracker for /triage</text>
+<g transform="translate(0,162)">
+<rect class="band" x="12" y="184" width="1646" height="676" rx="12"/>
+<polygon class="chev" points="30,200 306,200 326,220 306,240 30,240"/>
+<text class="ct" x="46" y="226">Think it through</text>
+<text class="cs" x="34" y="258">Grill until it can be a spec</text>
+<polygon class="chev" points="360,200 636,200 656,220 636,240 360,240 376,220"/>
+<text class="ct" x="390" y="226">Into the tracker</text>
+<text class="cs" x="364" y="258">File · specify · split</text>
+<polygon class="chev" points="690,200 966,200 986,220 966,240 690,240 706,220"/>
+<text class="ct" x="720" y="226">Implement</text>
+<text class="cs" x="694" y="258">One ticket at a time, test first</text>
+<polygon class="chev" points="1020,200 1296,200 1316,220 1296,240 1020,240 1036,220"/>
+<text class="ct" x="1050" y="226">Review &amp; ship</text>
+<text class="cs" x="1024" y="258">Against standards and spec, merge</text>
+<polygon class="chev" points="1350,200 1626,200 1646,220 1626,240 1350,240 1366,220"/>
+<text class="ct" x="1380" y="226">Retro &amp; feed back</text>
+<text class="cs" x="1354" y="258">Turn lessons into rules</text>
+<rect class="card key" x="30" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="298">/grill-with-docs</text>
+<text class="s" x="46" y="320">Grill · writes GLOSSARY + ADR</text>
+<rect class="manual" x="256" y="283" width="54" height="20" rx="12"/><text class="bt" x="283" y="297" text-anchor="middle">manual</text>
+<circle class="num" cx="32" cy="274" r="11"/><text class="nt" x="32" y="278" text-anchor="middle">1</text>
+<rect class="card" x="30" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="382">/grill-me</text>
+<text class="s" x="46" y="404">Same grilling, no paper trail</text>
+<rect class="manual" x="256" y="367" width="54" height="20" rx="12"/><text class="bt" x="283" y="381" text-anchor="middle">manual</text>
+<rect class="card" x="30" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="466">/wayfinder</text>
+<text class="s" x="46" y="488">Huge work → decision tickets</text>
+<rect class="manual" x="256" y="451" width="54" height="20" rx="12"/><text class="bt" x="283" y="465" text-anchor="middle">manual</text>
+<rect class="card" x="30" y="524" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="550">research</text>
+<text class="s" x="46" y="572">Primary sources → cited markdown</text>
+<rect class="auto" x="256" y="535" width="54" height="20" rx="12"/><text class="bt" x="283" y="549" text-anchor="middle">auto</text>
+<rect class="card" x="30" y="608" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="634">prototype</text>
+<text class="s" x="46" y="656">Throwaway: state model or UI</text>
+<rect class="auto" x="256" y="619" width="54" height="20" rx="12"/><text class="bt" x="283" y="633" text-anchor="middle">auto</text>
+<rect class="card" x="30" y="692" width="290" height="64" rx="10"/>
+<text class="t" x="46" y="718">/to-questionnaire</text>
+<text class="s" x="46" y="740">Unknowns → a questionnaire</text>
+<rect class="manual" x="256" y="703" width="54" height="20" rx="12"/><text class="bt" x="283" y="717" text-anchor="middle">manual</text>
+<rect class="card" x="360" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="298">/triage</text>
+<text class="s" x="376" y="320">Classify · reproduce · decide</text>
+<rect class="manual" x="586" y="283" width="54" height="20" rx="12"/><text class="bt" x="613" y="297" text-anchor="middle">manual</text>
+<rect class="card key" x="360" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="382">/to-spec</text>
+<text class="s" x="376" y="404">Turn the conversation into a spec</text>
+<rect class="manual" x="586" y="367" width="54" height="20" rx="12"/><text class="bt" x="613" y="381" text-anchor="middle">manual</text>
+<circle class="num" cx="362" cy="358" r="11"/><text class="nt" x="362" y="362" text-anchor="middle">2</text>
+<rect class="card key" x="360" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="466">/to-tickets</text>
+<text class="s" x="376" y="488">Vertical slices + blocking edges</text>
+<rect class="manual" x="586" y="451" width="54" height="20" rx="12"/><text class="bt" x="613" y="465" text-anchor="middle">manual</text>
+<circle class="num" cx="362" cy="442" r="11"/><text class="nt" x="362" y="446" text-anchor="middle">3</text>
+<rect class="card key" x="690" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="298">/implement</text>
+<text class="s" x="706" y="320">One ticket, then commit</text>
+<rect class="manual" x="916" y="283" width="54" height="20" rx="12"/><text class="bt" x="943" y="297" text-anchor="middle">manual</text>
+<circle class="num" cx="692" cy="274" r="11"/><text class="nt" x="692" y="278" text-anchor="middle">4</text>
+<rect class="card" x="690" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="382">/implement-spec</text>
+<text class="s" x="706" y="404">Whole spec: subagents + worktrees</text>
+<rect class="manual" x="916" y="367" width="54" height="20" rx="12"/><text class="bt" x="943" y="381" text-anchor="middle">manual</text>
+<rect class="card" x="690" y="440" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="466">tdd</text>
+<text class="s" x="706" y="488">Red-green-refactor at the seam</text>
+<rect class="auto" x="916" y="451" width="54" height="20" rx="12"/><text class="bt" x="943" y="465" text-anchor="middle">auto</text>
+<rect class="card" x="690" y="524" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="550">diagnosing-bugs</text>
+<text class="s" x="706" y="572">Hard bugs: a loop that goes red</text>
+<rect class="auto" x="916" y="535" width="54" height="20" rx="12"/><text class="bt" x="943" y="549" text-anchor="middle">auto</text>
+<rect class="card" x="690" y="608" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="634">codebase-design</text>
+<text class="s" x="706" y="656">Deep modules: interface · seam · tests</text>
+<rect class="auto" x="916" y="619" width="54" height="20" rx="12"/><text class="bt" x="943" y="633" text-anchor="middle">auto</text>
+<rect class="card" x="690" y="692" width="290" height="64" rx="10"/>
+<text class="ts" x="706" y="718">/improve-codebase-architecture</text>
+<text class="s" x="706" y="740">Find deepening points; HTML report</text>
+<rect class="manual" x="916" y="703" width="54" height="20" rx="12"/><text class="bt" x="943" y="717" text-anchor="middle">manual</text>
+<rect class="card" x="690" y="776" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="802">wizard</text>
+<text class="s" x="706" y="824">Human-only steps → a bash wizard</text>
+<rect class="auto" x="916" y="787" width="54" height="20" rx="12"/><text class="bt" x="943" y="801" text-anchor="middle">auto</text>
+<rect class="card key" x="1020" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="298">code-review</text>
+<text class="s" x="1036" y="320">Parallel axes: Standards + Spec</text>
+<rect class="auto" x="1246" y="283" width="54" height="20" rx="12"/><text class="bt" x="1273" y="297" text-anchor="middle">auto</text>
+<circle class="num" cx="1022" cy="274" r="11"/><text class="nt" x="1022" y="278" text-anchor="middle">5</text>
+<rect class="card" x="1020" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="382">pr</text>
+<text class="s" x="1036" y="404">PR body: summary, evidence, risk</text>
+<rect class="auto" x="1246" y="367" width="54" height="20" rx="12"/><text class="bt" x="1273" y="381" text-anchor="middle">auto</text>
+<rect class="card key" x="1350" y="272" width="290" height="64" rx="10"/>
+<text class="t" x="1366" y="298">/retro</text>
+<text class="s" x="1366" y="320">Improve rules, checks, tools</text>
+<rect class="manual" x="1576" y="283" width="54" height="20" rx="12"/><text class="bt" x="1603" y="297" text-anchor="middle">manual</text>
+<circle class="num" cx="1352" cy="274" r="11"/><text class="nt" x="1352" y="278" text-anchor="middle">6</text>
+<rect class="card" x="1350" y="356" width="290" height="64" rx="10"/>
+<text class="t" x="1366" y="382">writing-for-agents</text>
+<text class="s" x="1366" y="404">Style guide: skills, AGENTS.md</text>
+<rect class="auto" x="1576" y="367" width="54" height="20" rx="12"/><text class="bt" x="1603" y="381" text-anchor="middle">auto</text>
+<path class="main" d="M320,304 H340 V388 H356" marker-end="url(#am)"/>
+<path class="main" d="M505.0,420 V437" marker-end="url(#am)"/>
+<path class="main" d="M650,472 H670 V316 H686" marker-end="url(#am)"/>
+<path class="main" d="M980,304 H1016" marker-end="url(#am)"/>
+<path class="main" d="M1310,304 H1346" marker-end="url(#am)"/>
+<path class="bug" d="M650,292 H686" marker-end="url(#ab)"/>
+<rect class="band" x="12" y="872" width="1646" height="100" rx="12"/>
+<text class="bl" x="44" y="927.0">Always available</text>
+<rect class="card" x="360" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="376" y="916">/handoff</text>
+<text class="s" x="376" y="938">Long chat → handoff for next agent</text>
+<rect class="manual" x="586" y="901" width="54" height="20" rx="12"/><text class="bt" x="613" y="915" text-anchor="middle">manual</text>
+<rect class="card" x="690" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="706" y="916">/wait-what</text>
+<text class="s" x="706" y="938">Didn't land? Plain-word re-pitch</text>
+<rect class="manual" x="916" y="901" width="54" height="20" rx="12"/><text class="bt" x="943" y="915" text-anchor="middle">manual</text>
+<rect class="card" x="1020" y="890" width="290" height="64" rx="10"/>
+<text class="t" x="1036" y="916">/teach</text>
+<text class="s" x="1036" y="938">Learn a concept in this workspace</text>
+<rect class="manual" x="1246" y="901" width="54" height="20" rx="12"/><text class="bt" x="1273" y="915" text-anchor="middle">manual</text>
+<rect class="manual" x="20" y="1004" width="54" height="20" rx="12"/><text class="bt" x="47" y="1018" text-anchor="middle">manual</text>
+<text class="lbl" x="84" y="1019">Type the slash command</text>
+<rect class="auto" x="240" y="1004" width="54" height="20" rx="12"/><text class="bt" x="267" y="1018" text-anchor="middle">auto</text>
+<text class="lbl" x="304" y="1019">Auto-invoked when it fits</text>
+<path class="main" d="M500,1014 H550" marker-end="url(#am)"/><circle class="num" cx="572" cy="1014" r="10"/><text class="nt" x="572" y="1018" text-anchor="middle">1</text>
+<text class="lbl" x="590" y="1019">Main path ①→⑥: idea through retro</text>
+<path class="bug" d="M860,1014 H910" marker-end="url(#ab)"/>
+<text class="lbl" x="920" y="1019">Bug shortcut: triage + repro, skip the spec, go to /implement</text></g>
+<path class="edge" d="M505,312 V430" marker-end="url(#ag)"/></svg>
