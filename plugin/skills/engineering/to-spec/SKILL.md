@@ -16,7 +16,11 @@ The issue tracker and triage label vocabulary should have been provided to you. 
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
+3. Write the spec using the template below. Before publishing, resolve the target issue:
+   - If the user passed an issue number or URL, or the conversation already identifies one for this work, read it and update that issue in place. If several could be the target, ask which one. Never create a second issue for the same spec.
+   - Otherwise, search the tracker for an existing open issue that matches this work. If one matches, ask the user whether to update it.
+   - Only create a new issue when no existing target is found.
+   Publish the spec to that issue and apply the `ready-for-agent` triage label - no need for additional triage.
 
 <spec-template>
 

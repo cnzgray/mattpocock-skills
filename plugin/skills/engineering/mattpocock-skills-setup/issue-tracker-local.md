@@ -12,7 +12,9 @@ Issues and specs for this repo live as markdown files in `.scratch/`.
 
 ## Publishing to the issue tracker
 
-Create a new file under `.scratch/<feature-slug>/` (creating the directory if needed).
+When publishing a spec, resolve the target file first: if the user passed a path, or the conversation already identifies one, rewrite that file in place instead of creating another. When publishing tickets, each ticket gets its own file unless it already exists.
+
+If no target is identified, list the feature directory for a matching file and ask the user before creating one. Never create a second file for the same spec.
 
 ## Fetching the relevant ticket
 

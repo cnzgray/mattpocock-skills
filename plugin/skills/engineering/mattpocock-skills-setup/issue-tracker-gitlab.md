@@ -18,7 +18,9 @@ Infer the repo from `git remote -v`; `glab` does this automatically when run ins
 
 ## Publishing to the issue tracker
 
-Create a GitLab issue.
+When publishing a spec, resolve the target issue first: if the user passed an issue number or URL, or the conversation already identifies one, update that issue in place with `glab issue update <number> --description "<body>"` instead of creating another. When publishing tickets, each ticket is a new issue unless it already exists.
+
+If no target is identified, search open issues for a match and ask the user before creating one. Never create a second issue for the same spec.
 
 ## Fetching the relevant ticket
 
