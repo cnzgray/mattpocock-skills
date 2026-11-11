@@ -20,7 +20,7 @@
 <rect class="band" x="12" y="60" width="1646" height="112" rx="12"/>
 <text class="bl" x="44" y="92">开始前 · 迷路时</text>
 <rect class="card" x="360" y="88" width="290" height="64" rx="10"/>
-<text class="ts" x="376" y="114">/mattpocock-skills-setup</text>
+<text class="ts" x="376" y="114">/setup-matt-pocock-skills</text>
 <text class="s" x="376" y="136">一次性配置：工单系统 · 标签 · 文档</text>
 <rect class="manual" x="598" y="99" width="42" height="20" rx="10"/><text class="bt" x="619" y="113" text-anchor="middle">手动</text>
 <rect class="card" x="690" y="88" width="290" height="64" rx="10"/>

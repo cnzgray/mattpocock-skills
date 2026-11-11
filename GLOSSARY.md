@@ -51,7 +51,7 @@ _Avoid_: origin、base repo、source repo
 _Avoid_: clone、downstream、derivative
 
 **Divergence**:
-fork 与 upstream 之间刻意保留的差异；不写明就会被读成失同步。本仓库有四处：领域文档约定改名为 `GLOSSARY.md`、互相打架的约定之间做了调和、grilling 与 domain-modeling 被折叠进消费方、setup 技能改名为 mattpocock-skills-setup。
+fork 与 upstream 之间刻意保留的差异；不写明就会被读成失同步。本仓库有三处：领域文档约定改名为 `GLOSSARY.md`、互相打架的约定之间做了调和、grilling 与 domain-modeling 被折叠进消费方。
 _Avoid_: diff、delta、customization
 
 **Re-sync**:
@@ -87,7 +87,7 @@ _Avoid_: stub、proxy file、re-export、symlink
 ### 每仓库配置
 
 **Setup**:
-`mattpocock-skills-setup` 这项每仓库跑一次的配置动作：定下 issue tracker、triage 标签词表、领域文档落位这三件事。它的产物是 `docs/agents/` 下的三份文件，加 `AGENTS.md` / `CLAUDE.md` 里的一个块。
+`setup-matt-pocock-skills` 这项每仓库跑一次的配置动作：定下 issue tracker、triage 标签词表、领域文档落位这三件事。它的产物是 `docs/agents/` 下的三份文件，加 `AGENTS.md` / `CLAUDE.md` 里的一个块。
 _Avoid_: install、init、bootstrap、onboarding
 
 **Issue tracker**:

@@ -53,13 +53,13 @@ OpenCode V2 直接读这两个目录，所以 `npx skills` 每个作用域只写
 
 更新是手动的：`npx skills@latest update`；要拿到之后新增的技能，重跑 `add`。
 
-调用 OpenCode 技能用裸 ID，不带命名空间：`grill-me`，不是 `/mattpocock-skills:grill-me`。在 prompt 里用 `@grill-me` 提及它，或者让模型自己挑。setup 技能是 `mattpocock-skills-setup`，和 Claude Code 侧一样每个仓库跑一次。
+调用 OpenCode 技能用裸 ID，不带命名空间：`grill-me`，不是 `/mattpocock-skills:grill-me`。在 prompt 里用 `@grill-me` 提及它，或者让模型自己挑。setup 技能是 `setup-matt-pocock-skills`，和 Claude Code 侧一样每个仓库跑一次。
 
 有一处不一致要知道：`npx skills` 会安装仓库里它能找到的每一个 `SKILL.md`，从不读 [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json) 里的 `skills` 白名单。两份清单目前都是 25，彼此一致；但一个丢在 `plugin/skills/` 下、没进白名单的 `SKILL.md` 会到达 OpenCode，却不会到达 Claude Code。
 
-## 每个仓库跑一次 `/mattpocock-skills:mattpocock-skills-setup`
+## 每个仓库跑一次 `/mattpocock-skills:setup-matt-pocock-skills`
 
-在你的 Claude Code 会话里，把 [mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md) 作为 `/mattpocock-skills:mattpocock-skills-setup` 运行，每个想用工程流程的仓库跑一次。插件技能总是带命名空间，所以本 README 里每个命令都是 `/mattpocock-skills:<skill>`。它会问你：
+在你的 Claude Code 会话里，把 [setup-matt-pocock-skills](./plugin/skills/engineering/setup-matt-pocock-skills/SKILL.md) 作为 `/mattpocock-skills:setup-matt-pocock-skills` 运行，每个想用工程流程的仓库跑一次。插件技能总是带命名空间，所以本 README 里每个命令都是 `/mattpocock-skills:<skill>`。它会问你：
 
 - 用哪个工单系统（`to-spec` 与 `to-tickets` 会读回来）
 - `to-tickets` 给工单打哪套标签词表
@@ -133,7 +133,7 @@ grill-with-docs → to-spec → to-tickets → implement (tdd + code-review) →
 - **[triage](./plugin/skills/engineering/triage/SKILL.md)**：让 issue 和外部 PR 走过一个由分诊角色组成的状态机：归类、核实、必要时追问，并写出 agent 可用的 brief。
 - **[improve-codebase-architecture](./plugin/skills/engineering/improve-codebase-architecture/SKILL.md)**：扫描代码库找加深机会，用可视化 HTML 报告呈现，然后对选中的那个展开追问。
 - **[retro](./plugin/skills/engineering/retro/SKILL.md)**：构建之后闭环——建议改 agent 的环境而不是代码：导航指针、确定性检查、编码规范、steering 文件、工具。最严重的排前面。
-- **[mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md)**：为工程技能配置本仓库——工单系统、triage 标签词表、领域文档布局。每个仓库跑一次。
+- **[setup-matt-pocock-skills](./plugin/skills/engineering/setup-matt-pocock-skills/SKILL.md)**：为工程技能配置本仓库——工单系统、triage 标签词表、领域文档布局。每个仓库跑一次。
 
 **效率类**：
 
@@ -196,4 +196,4 @@ README.zh-CN.md                  # 本文件（作者侧，永不随插件分发
 
 所有技能内容 © Matt Pocock，[MIT](./LICENSE)。本仓库是非官方 fork，上游是事实来源：[mattpocock/skills](https://github.com/mattpocock/skills)。
 
-技能正文沿用上游，只有七处刻意差异：领域文档约定改名为 `GLOSSARY.md`（上游 [PR #876](https://github.com/mattpocock/skills/pull/876)）；正文自相矛盾的地方——跨文件或文件内——已做调和；两个上游技能被折叠进消费方而不是作为独立条目分发（`grilling` 的追问现在住在 `grill-me` 与 `grill-with-docs` 里，`domain-modeling` 由 `grill-with-docs` 内联执行）；setup 技能改名为 `mattpocock-skills-setup`；`/implement-spec` 复用已有 worktree，而不是每次新建，并在为并发工单额外创建 worktree 前先询问用户；`/to-spec` 更新已有工单，而不是重复发布；`/retro` 把缺少护栏的地方当作候选提出，而不是默认直接建检查。其余都是上游的。重新同步就是把 `plugin/skills/` 按相同路径与上游做 diff，搬入变化的部分。`.claude-plugin/` 与 `plugin/.claude-plugin/` 里的清单只在 upstream 发版时才需要跟一次版本号。
+技能正文沿用上游，只有六处刻意差异：领域文档约定改名为 `GLOSSARY.md`（上游 [PR #876](https://github.com/mattpocock/skills/pull/876)）；正文自相矛盾的地方——跨文件或文件内——已做调和；两个上游技能被折叠进消费方而不是作为独立条目分发（`grilling` 的追问现在住在 `grill-me` 与 `grill-with-docs` 里，`domain-modeling` 由 `grill-with-docs` 内联执行）；`/implement-spec` 复用已有 worktree，而不是每次新建，并在为并发工单额外创建 worktree 前先询问用户；`/to-spec` 更新已有工单，而不是重复发布；`/retro` 把缺少护栏的地方当作候选提出，而不是默认直接建检查。其余都是上游的。重新同步就是把 `plugin/skills/` 按相同路径与上游做 diff，搬入变化的部分。`.claude-plugin/` 与 `plugin/.claude-plugin/` 里的清单只在 upstream 发版时才需要跟一次版本号。

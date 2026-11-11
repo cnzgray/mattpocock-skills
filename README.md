@@ -53,13 +53,13 @@ Install through one route per agent. Taking the Claude Code plugin and this one 
 
 Updates are manual: `npx skills@latest update`, and re-run `add` to pick up skills added since.
 
-Address an OpenCode skill by its bare ID, not by a namespace: `grill-me`, not `/mattpocock-skills:grill-me`. Mention it as `@grill-me` in a prompt, or let the model pick it up on its own. The setup skill is `mattpocock-skills-setup`, run once per repo as on the Claude Code side.
+Address an OpenCode skill by its bare ID, not by a namespace: `grill-me`, not `/mattpocock-skills:grill-me`. Mention it as `@grill-me` in a prompt, or let the model pick it up on its own. The setup skill is `setup-matt-pocock-skills`, run once per repo as on the Claude Code side.
 
 One mismatch to know about: `npx skills` installs every `SKILL.md` it finds in the repo and never reads the `skills` whitelist in [`plugin/.claude-plugin/plugin.json`](./plugin/.claude-plugin/plugin.json). The two lists agree today at 25, but a `SKILL.md` dropped under `plugin/skills/` without a whitelist entry reaches OpenCode and not Claude Code.
 
-## Run `/mattpocock-skills:mattpocock-skills-setup` once per repo
+## Run `/mattpocock-skills:setup-matt-pocock-skills` once per repo
 
-In your Claude Code session, run [mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md) as `/mattpocock-skills:mattpocock-skills-setup`, once in every repo where you want the engineering flows. Plugin skills are always namespaced, so every command in this README is `/mattpocock-skills:<skill>`. It asks you:
+In your Claude Code session, run [setup-matt-pocock-skills](./plugin/skills/engineering/setup-matt-pocock-skills/SKILL.md) as `/mattpocock-skills:setup-matt-pocock-skills`, once in every repo where you want the engineering flows. Plugin skills are always namespaced, so every command in this README is `/mattpocock-skills:<skill>`. It asks you:
 
 - which issue tracker you want (`to-spec` and `to-tickets` read it back)
 - which label vocabulary `to-tickets` applies to issues
@@ -133,7 +133,7 @@ All 25 enabled skills, grouped the way upstream splits them ([`.agents/invocatio
 - **[triage](./plugin/skills/engineering/triage/SKILL.md)**: move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.
 - **[improve-codebase-architecture](./plugin/skills/engineering/improve-codebase-architecture/SKILL.md)**: scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
 - **[retro](./plugin/skills/engineering/retro/SKILL.md)**: close the loop after a build — suggest changes to the agent's environment rather than the code: navigation pointers, deterministic checks, coding standards, steering files, tooling. Most severe first.
-- **[mattpocock-skills-setup](./plugin/skills/engineering/mattpocock-skills-setup/SKILL.md)**: configure this repo for the engineering skills — issue tracker, triage label vocabulary, domain doc layout. Run once per repo.
+- **[setup-matt-pocock-skills](./plugin/skills/engineering/setup-matt-pocock-skills/SKILL.md)**: configure this repo for the engineering skills — issue tracker, triage label vocabulary, domain doc layout. Run once per repo.
 
 **Productivity**:
 
@@ -196,4 +196,4 @@ Shared sources live under `dev/source/`, one subdirectory per shared unit: `dev/
 
 All skill content © Matt Pocock, [MIT](./LICENSE). This repo is an unofficial fork, and upstream is the source of truth: [mattpocock/skills](https://github.com/mattpocock/skills).
 
-Skill bodies are carried over from upstream, with seven deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the places where the text disagreed with itself — across two files or inside one — have been reconciled, two upstream skills are folded into their consumers rather than shipped as entries of their own (`grilling`, whose interview now lives inside `grill-me` and `grill-with-docs`, and `domain-modeling`, which `grill-with-docs` runs inline), the setup skill is renamed to `mattpocock-skills-setup`, `/implement-spec` reuses an existing worktree instead of always creating one and asks before creating worktrees for extra concurrent tickets, `/to-spec` updates an existing issue instead of publishing a duplicate, and `/retro` lists guardrail gaps as candidates instead of defaulting to building the check. Everything else is upstream's. Re-syncing is a diff of `plugin/skills/` against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` and `plugin/.claude-plugin/` only need a version bump when upstream ships one.
+Skill bodies are carried over from upstream, with six deliberate divergences: the domain-doc convention is renamed to `GLOSSARY.md` (upstream [PR #876](https://github.com/mattpocock/skills/pull/876)), the places where the text disagreed with itself — across two files or inside one — have been reconciled, two upstream skills are folded into their consumers rather than shipped as entries of their own (`grilling`, whose interview now lives inside `grill-me` and `grill-with-docs`, and `domain-modeling`, which `grill-with-docs` runs inline), `/implement-spec` reuses an existing worktree instead of always creating one and asks before creating worktrees for extra concurrent tickets, `/to-spec` updates an existing issue instead of publishing a duplicate, and `/retro` lists guardrail gaps as candidates instead of defaulting to building the check. Everything else is upstream's. Re-syncing is a diff of `plugin/skills/` against the same paths upstream, porting across whatever changed. The manifests in `.claude-plugin/` and `plugin/.claude-plugin/` only need a version bump when upstream ships one.

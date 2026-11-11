@@ -20,7 +20,7 @@
 <rect class="band" x="12" y="60" width="1646" height="112" rx="12"/>
 <text class="bl" x="44" y="92">Before you start · when lost</text>
 <rect class="card" x="360" y="88" width="290" height="64" rx="10"/>
-<text class="ts" x="376" y="114">/mattpocock-skills-setup</text>
+<text class="ts" x="376" y="114">/setup-matt-pocock-skills</text>
 <text class="s" x="376" y="136">One-time setup: tracker, labels, docs</text>
 <rect class="manual" x="586" y="99" width="54" height="20" rx="12"/><text class="bt" x="613" y="113" text-anchor="middle">manual</text>
 <rect class="card" x="690" y="88" width="290" height="64" rx="10"/>
