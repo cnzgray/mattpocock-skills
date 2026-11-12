@@ -8,17 +8,7 @@ Interview the user relentlessly until you reach a shared understanding. Map this
 
 Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
 
-**How to ask.** Use the host's **structured question tool** — the one that shows a question with its candidate answers and takes the user's picks. Claude Code's `AskUserQuestion` is one; other hosts have their own name for it. It puts the frontier in front of the user as a form to fill rather than a wall of prose to answer, and a user who agrees with you can agree with a single pick.
-
-Compute the frontier once, then ask it one tool call at a time — a call carries only as many questions as the tool allows, and each returns the user's picks before the next goes out. Every call belongs to the same round: the round ends when the last one comes back answered, and only then is the frontier recomputed.
-
-Carry each question like this:
-
-- **Stem**: the decision in one line, numbered so the numbering runs unbroken across the session.
-- **Options**: the candidate answers, each with a note on what it commits you to. **Your recommended answer goes first**, marked as the recommendation — a user who agrees with you picks the first option and moves on. A question with no clean set of candidates still goes through the tool: offer the answers you can think of and let the user type their own.
-- **Reasoning**: the background, the alternatives weighed, the trade-off behind the recommendation — in prose, before the call, as much context as each question needs and no more. A stem squeezed onto one line is where the argument dies.
-
-**Without such a tool**, ask the frontier in prose instead:
+Format a round like so:
 
 ```
 ❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
